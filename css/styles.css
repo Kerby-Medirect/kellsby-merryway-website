@@ -288,11 +288,14 @@ body {
     position: relative;
     width: 90%;
     max-width: 1000px;
-    margin: 50px auto;
+    max-height: 90vh; /* Limit height to 90% of viewport */
+    margin: 5vh auto; /* Center vertically with 5vh margin */
     background: #1a1a1a;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .close-lightbox {
@@ -314,6 +317,9 @@ body {
 .lightbox-body {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100%; /* Take full height of container */
 }
 
 .lightbox-image-container {
@@ -330,6 +336,8 @@ body {
 
 .lightbox-text {
     padding: 30px;
+    flex: 1;
+    overflow-y: auto; /* Enable scrolling for text content */
 }
 
 .lightbox-text h3 {
@@ -434,7 +442,8 @@ body {
     
     .lightbox-content {
         width: 95%;
-        margin: 30px auto;
+        max-height: 95vh;
+        margin: 2.5vh auto;
     }
     
     .lightbox-text {
@@ -532,6 +541,37 @@ body {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling for lightbox */
+.lightbox-body::-webkit-scrollbar,
+.lightbox-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lightbox-body::-webkit-scrollbar-track,
+.lightbox-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.lightbox-body::-webkit-scrollbar-thumb,
+.lightbox-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.lightbox-body::-webkit-scrollbar-thumb:hover,
+.lightbox-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox scrollbar styling */
+.lightbox-body,
+.lightbox-text {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 }
 
 /* Focus styles for accessibility */
