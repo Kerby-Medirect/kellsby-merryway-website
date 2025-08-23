@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px; /* Base font size for rem calculations */
+}
+
 body {
     background-color: #000; /* Black background */
     color: #fff;            /* White text */
@@ -18,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensures the wrapper fills the viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* ======================== */
@@ -25,10 +30,11 @@ body {
 /* ======================== */
 
 .site-wrapper {
-    width: 90%;
+    width: 95%; /* Increased from 90% for better mobile use */
     max-width: 1400px;
-    margin: 20px; /* Space around the entire layout */
+    margin: 10px; /* Reduced margin for mobile */
     background-color: #000;
+    padding: 0 10px; /* Add padding for mobile */
 }
 
 /* ======================== */
@@ -37,27 +43,29 @@ body {
 
 .site-header {
     text-align: center;
-    padding: 40px 0 20px 0; /* Space above, below, and on the sides */
+    padding: 20px 0 15px 0; /* Reduced padding for mobile */
 }
 
 .logotype {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font size */
     font-weight: normal; /* To match the look of a logotype */
     letter-spacing: 0.2em; /* Spacing between letters */
+    line-height: 1.2; /* Better line height for mobile */
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem); /* Responsive font size */
     letter-spacing: 0.4em;
     text-transform: uppercase;
+    margin-top: 5px;
 }
 
 .divider {
     height: 1px;
     background-color: #fff;
-    width: 80%;
+    width: 90%; /* Increased from 80% for mobile */
     max-width: 300px;
-    margin: 20px auto; /* Center the divider horizontally */
+    margin: 15px auto; /* Reduced margin for mobile */
 }
 
 /* ======================== */
@@ -67,7 +75,8 @@ body {
 .main-content {
     display: flex;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 30px 0; /* Reduced padding for mobile */
+    gap: 20px; /* Use gap instead of margin for better spacing */
 }
 
 /* ======================== */
@@ -76,7 +85,7 @@ body {
 
 .sidebar-toc {
     flex: 0 0 200px; /* Fix the sidebar width */
-    margin-right: 50px; /* Space between sidebar and main content */
+    margin-right: 30px; /* Reduced margin for mobile */
 }
 
 .year {
@@ -97,6 +106,7 @@ body {
 .month-nav a:hover:not(.disabled) {
     color: #fff; /* Only clickable links will turn white on hover */
     transform: translateX(5px);
+    transition: color 0.3s ease, transform 0.2s ease;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -169,10 +179,8 @@ body {
     }
 }
 
-
-
 .post-date {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 2vw, 0.8rem); /* Responsive font size */
     color: #aaa;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -180,14 +188,15 @@ body {
 }
 
 .post-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.5rem, 4vw, 2.2rem); /* Responsive font size */
     font-weight: 700;
     margin-bottom: 10px;
     letter-spacing: 0;
+    line-height: 1.3; /* Better line height for mobile */
 }
 
 .post-author {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 2vw, 0.8rem); /* Responsive font size */
     color: #aaa;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -195,8 +204,9 @@ body {
 }
 
 .post-content p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
     margin-bottom: 1.5rem; /* Space between paragraphs */
+    line-height: 1.7; /* Better readability on mobile */
 }
 
 .post-content img,
@@ -205,6 +215,7 @@ body {
     height: auto;
     margin: 20px 0;
     display: block; /* To center with margin auto if needed */
+    border-radius: 4px; /* Subtle rounded corners */
 }
 
 /* ======================== */
@@ -213,41 +224,225 @@ body {
 
 .site-footer {
     text-align: center;
-    padding: 20px 0 40px 0;
+    padding: 20px 0 30px 0; /* Reduced padding for mobile */
 }
 
 .site-footer .divider {
     background-color: #fff;
-    width: 60%;
+    width: 80%; /* Increased from 60% for mobile */
     max-width: 200px;
-    margin: 20px auto;
+    margin: 15px auto; /* Reduced margin for mobile */
 }
 
 .copyright {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 2vw, 0.8rem); /* Responsive font size */
     color: #aaa;
 }
 
 /* ======================== */
-/* 8. Media Queries for Responsiveness */
+/* 8. Enhanced Media Queries for Responsiveness */
 /* ======================== */
 
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column; /* Stack the sidebar and content on smaller screens */
+/* Mobile First - Small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+    .site-wrapper {
+        width: 100%;
+        margin: 5px;
+        padding: 0 15px;
     }
-
+    
+    .site-header {
+        padding: 15px 0 10px 0;
+    }
+    
+    .logotype {
+        font-size: 1.8rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 25px;
+    }
+    
     .sidebar-toc {
         margin-right: 0;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         text-align: center;
         flex: auto;
     }
-
+    
     .month-nav ul {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    .month-nav a {
+        padding: 8px 12px;
+        background-color: #111;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        min-width: 80px;
+        text-align: center;
+    }
+    
+    .post-title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .post-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* Medium devices (tablets, 481px and up) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .site-wrapper {
+        width: 95%;
+        margin: 10px;
+        padding: 0 20px;
+    }
+    
+    .site-header {
+        padding: 25px 0 20px 0;
+    }
+    
+    .logotype {
+        font-size: 2.2rem;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        padding: 35px 0;
+        gap: 30px;
+    }
+    
+    .sidebar-toc {
+        margin-right: 0;
+        margin-bottom: 30px;
+        text-align: center;
+        flex: auto;
+    }
+    
+    .month-nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 15px;
+    }
+    
+    .month-nav a {
+        padding: 10px 15px;
+        background-color: #111;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        min-width: 90px;
+        text-align: center;
+    }
+    
+    .post-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .site-wrapper {
+        width: 92%;
+        margin: 15px;
+    }
+    
+    .main-content {
+        padding: 40px 0;
+        gap: 25px;
+    }
+    
+    .sidebar-toc {
+        flex: 0 0 180px;
+        margin-right: 25px;
+    }
+    
+    .logotype {
+        font-size: 2.6rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1025px and up) */
+@media (min-width: 1025px) {
+    .site-wrapper {
+        width: 90%;
+        margin: 20px;
+    }
+    
+    .main-content {
+        padding: 50px 0;
+        gap: 30px;
+    }
+    
+    .sidebar-toc {
+        flex: 0 0 200px;
+        margin-right: 50px;
+    }
+    
+    .logotype {
+        font-size: 3rem;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .site-header {
+        padding: 15px 0 10px 0;
+    }
+    
+    .main-content {
+        padding: 20px 0;
+        gap: 20px;
+    }
+    
+    .sidebar-toc {
+        margin-bottom: 20px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .divider {
+        transform: scaleY(0.5);
+        transform-origin: center;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .site-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .sidebar-toc {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 20px 0;
     }
 }
