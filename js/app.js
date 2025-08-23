@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "December 15, 2024",
             month: "december",
             year: "2024",
+            type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "December 10, 2024",
             month: "december",
             year: "2024",
+            type: "poem",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "December 5, 2024",
             month: "december",
             year: "2024",
+            type: "artwork",
             author: "by Kellsby Merryway",
             image: "img/entry-03.jpg",
             content: `
@@ -104,8 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "November 20, 2024",
             month: "november",
             year: "2024",
+            type: "poem",
             author: "by Kellsby Merryway",
-            image: "img/entry-01.jpg",
+            image: "img/entry-02.jpg",
             content: `
                 <p>The trees shed their summer clothes, revealing the raw beauty beneath. Autumn teaches us that letting go can be as beautiful as holding on.</p>
                 
@@ -120,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "October Dreams",
             date: "October 15, 2024",
             month: "october",
-            year: "2024",
+            year: "2025",
+            type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -138,8 +143,9 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "September 25, 2024",
             month: "september",
             year: "2024",
+            type: "poem",
             author: "by Kellsby Merryway",
-            image: "img/entry-01.jpg",
+            image: "entry-01.jpg",
             content: `
                 <p>September sings a gentle lullaby, easing us from summer's intensity into autumn's gentle embrace.</p>
                 
@@ -155,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "August 10, 2024",
             month: "august",
             year: "2024",
+            type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -172,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "January 15, 2025",
             month: "january",
             year: "2025",
+            type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -189,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "February 14, 2025",
             month: "february",
             year: "2025",
+            type: "poem",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -252,37 +261,171 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Modal functionality
+    // Entry click functionality - handles both full-page and modal views
     entries.forEach(entry => {
         entry.addEventListener('click', function() {
             const entryId = this.querySelector('.read-more-btn').getAttribute('data-entry');
             const entryData = entriesData[entryId];
             
             if (entryData) {
-                // Populate modal with entry data
-                modalImage.src = entryData.image;
-                modalImage.alt = entryData.title;
-                modalTitle.textContent = entryData.title;
-                modalDate.textContent = entryData.date;
-                modalAuthor.textContent = entryData.author;
-                modalContent.innerHTML = entryData.content;
-                
-                // Show modal
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                
-                // Add fade-in animation
-                modal.style.opacity = '0';
-                modal.style.transform = 'scale(0.9)';
-                
-                setTimeout(() => {
-                    modal.style.transition = 'all 0.3s ease';
-                    modal.style.opacity = '1';
-                    modal.style.transform = 'scale(1)';
-                }, 10);
+                // Check entry type to determine view method
+                if (entryData.type === 'story' || entryData.type === 'poem') {
+                    // For stories and poems, navigate to full page
+                    navigateToFullEntry(entryData);
+                } else {
+                    // For artwork, GIFs, animations - show modal
+                    showModal(entryData);
+                }
             }
         });
     });
+
+    // Function to navigate to full entry page
+    function navigateToFullEntry(entryData) {
+        // Create a new page with the full entry content
+        const fullPageHTML = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${entryData.title} - Kellsby Merryway</title>
+                <meta name="description" content="${entryData.title} by Kellsby Merryway">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+                <style>
+                    * { margin: 0; padding: 0; box-sizing: border-box; }
+                    body { 
+                        font-family: 'Inter', sans-serif; 
+                        line-height: 1.6; 
+                        color: #333; 
+                        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                        min-height: 100vh;
+                    }
+                    .container { 
+                        max-width: 800px; 
+                        margin: 0 auto; 
+                        padding: 2rem; 
+                        background: white; 
+                        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        border-radius: 12px;
+                    }
+                    .header { 
+                        text-align: center; 
+                        margin-bottom: 3rem; 
+                        padding-bottom: 2rem; 
+                        border-bottom: 2px solid #e0e0e0; 
+                    }
+                    .title { 
+                        font-family: 'Playfair Display', serif; 
+                        font-size: 2.5rem; 
+                        color: #2c3e50; 
+                        margin-bottom: 1rem; 
+                        line-height: 1.2; 
+                    }
+                    .meta { 
+                        color: #7f8c8d; 
+                        font-size: 1.1rem; 
+                        margin-bottom: 0.5rem; 
+                    }
+                    .author { 
+                        color: #34495e; 
+                        font-style: italic; 
+                        font-size: 1.1rem; 
+                    }
+                    .content { 
+                        font-size: 1.1rem; 
+                        line-height: 1.8; 
+                        color: #2c3e50; 
+                    }
+                    .content p { 
+                        margin-bottom: 1.5rem; 
+                        text-align: justify; 
+                    }
+                    .back-btn { 
+                        display: inline-block; 
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                        color: white; 
+                        padding: 12px 24px; 
+                        text-decoration: none; 
+                        border-radius: 25px; 
+                        margin-top: 2rem; 
+                        transition: all 0.3s ease; 
+                        font-weight: 500; 
+                    }
+                    .back-btn:hover { 
+                        transform: translateY(-2px); 
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+                    }
+                    .entry-image { 
+                        text-align: center; 
+                        margin-bottom: 2rem; 
+                    }
+                    .entry-image img { 
+                        max-width: 100%; 
+                        height: auto; 
+                        border-radius: 8px; 
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+                    }
+                    @media (max-width: 768px) {
+                        .container { padding: 1.5rem; margin: 1rem; }
+                        .title { font-size: 2rem; }
+                        .content { font-size: 1rem; }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <h1 class="title">${entryData.title}</h1>
+                        <div class="meta">${entryData.date}</div>
+                        <div class="author">${entryData.author}</div>
+                    </div>
+                    <div class="entry-image">
+                        <img src="${entryData.image}" alt="${entryData.title}" loading="lazy">
+                    </div>
+                    <div class="content">
+                        ${entryData.content}
+                    </div>
+                    <a href="javascript:history.back()" class="back-btn">← Back to Journal</a>
+                </div>
+            </body>
+            </html>
+        `;
+        
+        // Open in new window/tab
+        const newWindow = window.open('', '_blank');
+        newWindow.document.write(fullPageHTML);
+        newWindow.document.close();
+    }
+
+    // Function to show modal for artwork, GIFs, animations
+    function showModal(entryData) {
+        // Populate modal with entry data
+        modalImage.src = entryData.image;
+        modalImage.alt = entryData.title;
+        modalTitle.textContent = entryData.title;
+        modalDate.textContent = entryData.date;
+        modalAuthor.textContent = entryData.author;
+        modalContent.innerHTML = entryData.content;
+        
+        // Show modal
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Add fade-in animation
+        modal.style.opacity = '0';
+        modal.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            modal.style.transition = 'all 0.3s ease';
+            modal.style.opacity = '1';
+            modal.style.transform = 'scale(1)';
+        }, 10);
+    }
 
     // Close modal
     modalClose.addEventListener('click', closeModal);
