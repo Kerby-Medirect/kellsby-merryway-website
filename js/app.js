@@ -213,11 +213,34 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => {
         img.addEventListener('load', function() {
             this.style.opacity = '1';
+            console.log('Image loaded successfully:', this.src);
+        });
+        
+        img.addEventListener('error', function() {
+            console.error('Image failed to load:', this.src);
+            this.style.display = 'none';
+            // Show fallback title if logo fails
+            const fallbackTitle = this.nextElementSibling;
+            if (fallbackTitle && fallbackTitle.classList.contains('site-title')) {
+                fallbackTitle.style.display = 'block';
+            }
         });
         
         img.style.opacity = '0';
         img.style.transition = 'opacity 0.3s ease';
     });
+
+    // Logo debugging
+    const logo = document.querySelector('.site-logo');
+    if (logo) {
+        console.log('Logo element found:', logo);
+        console.log('Logo src:', logo.src);
+        console.log('Logo display:', getComputedStyle(logo).display);
+        console.log('Logo visibility:', getComputedStyle(logo).visibility);
+        console.log('Logo opacity:', getComputedStyle(logo).opacity);
+    } else {
+        console.error('Logo element not found!');
+    }
 
     // Initialize the page
     console.log('Creative Journal Website loaded successfully!');
