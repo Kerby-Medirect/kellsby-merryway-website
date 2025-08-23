@@ -1,6 +1,29 @@
 // Creative Journal Website JavaScript
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Theme Management
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Add a subtle animation effect
+        document.body.style.transition = 'all 0.3s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 300);
+    });
+    
     // Sample entry data - you can expand this with your actual content
     const entriesData = {
         1: {
@@ -185,11 +208,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const nav = document.querySelector('.navigation');
         
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.background = 'var(--surface-primary)';
+            nav.style.background = 'var(--surface-secondary)';
         } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            nav.style.background = 'rgba(255, 255, 255, 0.9)';
+            header.style.background = 'var(--surface-primary)';
+            nav.style.background = 'var(--surface-secondary)';
         }
     });
 
@@ -206,4 +229,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the page
     console.log('Creative Journal Website loaded successfully!');
+    console.log('Theme toggle functionality enabled');
 });
