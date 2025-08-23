@@ -84,8 +84,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     min-height: 80px;
-    /* Debug: add border to see container */
-    border: 1px solid transparent;
 }
 
 .site-logo {
@@ -93,15 +91,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
     max-height: 80px;
-    /* Remove problematic filter temporarily */
-    /* filter: var(--logo-filter); */
     transition: all 0.3s ease;
     display: block;
-    /* Ensure logo is visible */
     opacity: 1;
     visibility: visible;
-    /* Debug: add border to see logo */
-    border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .site-title {
