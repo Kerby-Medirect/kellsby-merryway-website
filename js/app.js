@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         1: {
             title: "The Silent Watchers",
             date: "December 15, 2024",
+            month: "december",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         2: {
             title: "A Gentle Home",
             date: "December 10, 2024",
+            month: "december",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         3: {
             title: "Whispers of Color",
             date: "December 5, 2024",
+            month: "december",
             author: "by Kellsby Merryway",
             image: "img/entry-03.jpg",
             content: `
@@ -91,6 +94,70 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>And maybe that's the greatest gift that colors give us—not just beauty, but understanding. A way to see the world more clearly, to feel more deeply, to connect with ourselves and others in ways that words alone cannot achieve.</p>
                 
                 <p>So I listen to the whispers of color, and I try to understand what they're telling me. About the world, about myself, about the endless possibilities that exist when we open our eyes and our hearts to the beauty that surrounds us.</p>
+            `
+        },
+        4: {
+            title: "Autumn's Embrace",
+            date: "November 20, 2024",
+            month: "november",
+            author: "by Kellsby Merryway",
+            image: "img/entry-01.jpg",
+            content: `
+                <p>The trees shed their summer clothes, revealing the raw beauty beneath. Autumn teaches us that letting go can be as beautiful as holding on.</p>
+                
+                <p>There's something profoundly moving about watching the world transform itself, season by season. In autumn, nature shows us the art of graceful surrender. The leaves don't cling desperately to their branches; they let go with a final burst of color, painting the ground in brilliant hues before returning to the earth.</p>
+                
+                <p>I think autumn is nature's way of teaching us about change. It's not always comfortable or easy, but it's necessary for growth. Just as the trees must lose their leaves to prepare for winter's rest, we too must sometimes let go of what we're holding onto to make room for new possibilities.</p>
+                
+                <p>The beauty of autumn lies not just in its colors, but in its wisdom. It reminds us that endings can be beautiful, that loss can be transformative, that change is not the enemy of beauty but often its source.</p>
+            `
+        },
+        5: {
+            title: "October Dreams",
+            date: "October 15, 2024",
+            month: "october",
+            author: "by Kellsby Merryway",
+            image: "img/entry-02.jpg",
+            content: `
+                <p>October carries a special magic, a time when the world feels suspended between summer's warmth and winter's promise.</p>
+                
+                <p>There's something about October that feels like a dream—the way the light slants through the trees, the crispness in the air, the way everything seems to glow with an inner light. It's as if the world is holding its breath, waiting for something magical to happen.</p>
+                
+                <p>Perhaps it's the way October bridges two worlds—the fading warmth of summer and the approaching mystery of winter. It's a month of transition, of change, of possibility. In October, anything seems possible, and the world feels full of promise.</p>
+                
+                <p>I love how October makes me feel—alive and hopeful, ready for whatever comes next. It's a month that reminds me that change is beautiful, that endings are beginnings, and that magic is always possible if we're open to seeing it.</p>
+            `
+        },
+        6: {
+            title: "September's Song",
+            date: "September 25, 2024",
+            month: "september",
+            author: "by Kellsby Merryway",
+            image: "img/entry-01.jpg",
+            content: `
+                <p>September sings a gentle lullaby, easing us from summer's intensity into autumn's gentle embrace.</p>
+                
+                <p>There's something about September that feels like a transition, a bridge between two worlds. The heat of summer begins to fade, replaced by cooler breezes that carry the promise of change. It's as if the world is taking a deep breath, preparing for the transformation that autumn will bring.</p>
+                
+                <p>I love how September feels—still warm enough to enjoy the outdoors, but with that hint of crispness that speaks of things to come. It's a month that reminds me that change doesn't have to be sudden or jarring. Sometimes it comes gently, like a song that gradually shifts from one key to another.</p>
+                
+                <p>September teaches us patience. It shows us that good things take time, that the best transitions are the ones that happen gradually, allowing us to adjust and appreciate each moment as it comes.</p>
+            `
+        },
+        7: {
+            title: "August Heat",
+            date: "August 10, 2024",
+            month: "august",
+            author: "by Kellsby Merryway",
+            image: "img/entry-02.jpg",
+            content: `
+                <p>August holds the year's warmth like a precious gem, reminding us to savor every moment of summer's final days.</p>
+                
+                <p>August is summer at its most intense, its most vibrant. The heat seems to slow everything down, creating a sense of timelessness that's both frustrating and beautiful. In August, the world feels alive with energy, with possibility, with the raw power of the sun.</p>
+                
+                <p>I think August is nature's way of teaching us about intensity—about how to embrace the heat, to find beauty in discomfort, to appreciate the fullness of experience. It's a month that doesn't apologize for being what it is, and there's something admirable about that kind of authenticity.</p>
+                
+                <p>August reminds me to slow down, to appreciate the moment, to find joy in the simple things—a cold drink, a shady spot, the feeling of the sun on my skin. It's a month that teaches us to be present, to savor what we have while we have it.</p>
             `
         }
     };
@@ -118,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Filter entries
             entries.forEach(entry => {
-                if (filter === 'all' || entry.getAttribute('data-category') === filter) {
+                if (filter === 'all' || entry.getAttribute('data-month') === filter) {
                     entry.style.display = 'block';
                     entry.style.animation = 'fadeInUp 0.6s ease-out';
                 } else {
