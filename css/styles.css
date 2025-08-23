@@ -104,25 +104,25 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 255, 0, 0.1);
 }
 
-/* Dual logo system for light/dark modes */
+/* Dual logo system for light/dark modes - TEMPORARILY OVERRIDDEN FOR DEBUGGING */
 .site-logo-light {
-    display: block;
+    display: block !important;
     /* Debug: Add specific background for light logo */
     background-color: rgba(255, 255, 0, 0.2) !important;
 }
 
 .site-logo-dark {
-    display: none;
+    display: block !important;
     /* Debug: Add specific background for dark logo */
     background-color: rgba(255, 0, 255, 0.2) !important;
 }
 
 [data-theme="dark"] .site-logo-light {
-    display: none;
+    display: block !important;
 }
 
 [data-theme="dark"] .site-logo-dark {
-    display: block;
+    display: block !important;
 }
 
 .site-title {
