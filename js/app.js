@@ -1,95 +1,209 @@
-// app.js
+// Creative Journal Website JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Sample entry data - you can expand this with your actual content
+    const entriesData = {
+        1: {
+            title: "The Silent Watchers",
+            date: "December 15, 2024",
+            author: "by Kellsby Merryway",
+            image: "img/entry-01.jpg",
+            content: `
+                <p>In the quiet corners of forgotten rooms, they wait. Not with patience, but with purpose. The silent watchers see what we choose to ignore, hear what we refuse to acknowledge. They are the keepers of our secrets, the guardians of our truths.</p>
+                
+                <p>I've often wondered what they think of us, these spectral sentinels who observe our daily rituals with such intensity. Do they judge our choices? Do they mourn our losses? Or do they simply exist, eternal witnesses to the human condition?</p>
+                
+                <p>Perhaps the most unsettling thing about them isn't their presence, but their silence. In a world filled with noise—endless notifications, constant chatter, the hum of technology—their quiet observation feels almost sacred. They remind us that some things are meant to be felt, not spoken.</p>
+                
+                <p>I've learned to appreciate their company. In moments of solitude, when the weight of existence feels too heavy to bear alone, knowing they're there offers a strange kind of comfort. They don't offer solutions or advice, but their steady presence reminds me that I'm not truly alone.</p>
+                
+                <p>And maybe that's enough. Maybe the silent watchers are exactly what we need—not to guide us, but to witness our journey. To see us stumble and rise, to celebrate our victories and mourn our defeats, all without saying a word.</p>
+                
+                <p>In the end, perhaps we're all silent watchers in our own way, observing the lives of others while living our own. And maybe that's the most beautiful thing of all.</p>
+            `
+        },
+        2: {
+            title: "A Gentle Home",
+            date: "December 10, 2024",
+            author: "by Kellsby Merryway",
+            image: "img/entry-02.jpg",
+            content: `
+                <p>Home is not a place, but a feeling. It's the warmth that wraps around you like a familiar blanket, the comfort of knowing you belong somewhere, anywhere, everywhere. A gentle home holds your dreams and catches your tears.</p>
+                
+                <p>I've lived in many places throughout my life—small apartments with creaky floors, houses with gardens that needed tending, rooms that felt temporary and uncertain. But home has always been more than four walls and a roof. It's been the feeling of safety, of being understood, of belonging.</p>
+                
+                <p>My grandmother used to say that a home is made by the people who live in it, not by the building itself. She was right, of course. I've felt more at home in a tiny studio apartment filled with love than in a mansion filled with silence. It's the laughter, the conversations, the shared meals, the quiet moments of companionship that transform a space into a sanctuary.</p>
+                
+                <p>I think about what makes a home gentle. It's not about perfection or luxury, but about creating a space where people can be themselves without fear of judgment. It's about soft lighting and comfortable furniture, about books on shelves and art on walls, about the little details that make a space feel personal and lived-in.</p>
+                
+                <p>Most importantly, a gentle home is a place where emotions are welcome. Where tears can fall without shame, where joy can bubble up without restraint, where anger can be expressed and then released. A home that's gentle with your heart.</p>
+                
+                <p>I'm learning to create that kind of home for myself and for others. It's not always easy—life has a way of making things complicated and messy—but it's worth the effort. Because everyone deserves a place where they can rest, where they can heal, where they can grow.</p>
+                
+                <p>And maybe that's the true meaning of home—not just a place to live, but a place to become.</p>
+            `
+        },
+        3: {
+            title: "Whispers of Color",
+            date: "December 5, 2024",
+            author: "by Kellsby Merryway",
+            image: "img/entry-03.jpg",
+            content: `
+                <p>Colors speak in whispers, telling stories that words cannot capture. Each hue carries emotion, each shade holds memory. In the dance of light and pigment, we find the language of the soul.</p>
+                
+                <p>I've always been fascinated by how colors affect our emotions and perceptions. There's something almost magical about the way a particular shade can transport us to a specific moment in time, or evoke feelings we didn't even know we had.</p>
+                
+                <p>Take blue, for instance. Not just any blue, but the deep, rich blue of twilight—the color that appears just before the world goes dark. It's a color that speaks of endings and beginnings, of the quiet moments between day and night when anything seems possible. It's the color of hope and melancholy, of dreams and memories.</p>
+                
+                <p>Or red—not the harsh, aggressive red of warning signs, but the warm, inviting red of autumn leaves or ripe strawberries. It's a color that speaks of passion and warmth, of life and energy. It's the color of love and courage, of fire and heart.</p>
+                
+                <p>Green is the color of growth and renewal, of nature's endless cycle of death and rebirth. It's the color of patience and persistence, of standing firm in the face of change. It's the color of wisdom and balance, of harmony and peace.</p>
+                
+                <p>Yellow is the color of joy and optimism, of sunlight streaming through windows and daffodils in spring. It's the color of creativity and inspiration, of new ideas and fresh perspectives. It's the color of happiness and hope.</p>
+                
+                <p>But colors don't exist in isolation. They interact with each other, creating harmonies and contrasts that tell even more complex stories. A blue and green together might speak of ocean depths and forest shadows, while red and yellow together might speak of warmth and energy, of summer days and golden sunsets.</p>
+                
+                <p>I think that's why I love working with color so much. It's a way of communicating without words, of expressing emotions and ideas that are too complex or too subtle for language alone. It's a way of creating beauty and meaning in a world that sometimes feels chaotic and uncertain.</p>
+                
+                <p>And maybe that's the greatest gift that colors give us—not just beauty, but understanding. A way to see the world more clearly, to feel more deeply, to connect with ourselves and others in ways that words alone cannot achieve.</p>
+                
+                <p>So I listen to the whispers of color, and I try to understand what they're telling me. About the world, about myself, about the endless possibilities that exist when we open our eyes and our hearts to the beauty that surrounds us.</p>
+            `
+        }
+    };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const books = document.querySelectorAll('.book');
-    const bookContent = document.querySelector('.book-content');
+    // DOM Elements
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const entries = document.querySelectorAll('.entry');
+    const modal = document.getElementById('entryModal');
+    const modalClose = document.querySelector('.modal-close');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDate = document.getElementById('modalDate');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalContent = document.getElementById('modalContent');
 
-    let currentOpenPageIndex = 0; // Represents the index of the *first unflipped page* (0-indexed).
-                                  // 0: cover is closed (first page is index 0)
-                                  // 1: cover is open, showing page 1 (book at index 0 is flipped)
-                                  // 2: page 1 is open, showing page 2 (book at index 1 is flipped)
-
-    // 1. Initialize Z-indexes: Higher index for pages closer to the physical front of the book
-    // For 4 books: book[0] (cover) -> z-index 4, book[1] -> z-index 3, book[2] -> z-index 2, book[3] -> z-index 1
-    books.forEach((book, index) => {
-        book.style.zIndex = books.length - index;
+    // Filter functionality
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Filter entries
+            entries.forEach(entry => {
+                if (filter === 'all' || entry.getAttribute('data-category') === filter) {
+                    entry.style.display = 'block';
+                    entry.style.animation = 'fadeInUp 0.6s ease-out';
+                } else {
+                    entry.style.display = 'none';
+                }
+            });
+        });
     });
 
-    // Function to flip to the next page
-    function flipNext() {
-        if (currentOpenPageIndex < books.length) { // Can't go past the last 'book'
-            const bookToFlip = books[currentOpenPageIndex];
-
-            // Temporarily boost z-index while flipping
-            bookToFlip.style.zIndex = books.length + 10; // Ensure it's on top during animation
-
-            bookToFlip.style.transform = 'rotateY(-180deg)';
-            bookToFlip.classList.add('flipped');
-
-            // Listen for the end of the transition for final z-index adjustment
-            bookToFlip.addEventListener('transitionend', function handler() {
-                // Once flipped, its z-index can return to its sequential order relative to *unflipped* pages,
-                // but still be above pages that were flipped before it.
-                // A simpler approach: keep its z-index slightly higher than unflipped pages below it.
-                bookToFlip.style.zIndex = currentOpenPageIndex; // Lower than higher-indexed unflipped pages
-
-                // Remove the event listener to prevent multiple firings
-                bookToFlip.removeEventListener('transitionend', handler);
-            });
-
-            currentOpenPageIndex++; // Move to the next "open" page index
-
-            // Adjust book-content transform when the first page (cover) is opened
-            if (currentOpenPageIndex === 1) { // When cover (index 0) has just flipped
-                bookContent.classList.add('trnsf');
-                bookContent.classList.remove('trnsf-reset');
+    // Modal functionality
+    entries.forEach(entry => {
+        entry.addEventListener('click', function() {
+            const entryId = this.querySelector('.read-more-btn').getAttribute('data-entry');
+            const entryData = entriesData[entryId];
+            
+            if (entryData) {
+                // Populate modal with entry data
+                modalImage.src = entryData.image;
+                modalImage.alt = entryData.title;
+                modalTitle.textContent = entryData.title;
+                modalDate.textContent = entryData.date;
+                modalAuthor.textContent = entryData.author;
+                modalContent.innerHTML = entryData.content;
+                
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Add fade-in animation
+                modal.style.opacity = '0';
+                modal.style.transform = 'scale(0.9)';
+                
+                setTimeout(() => {
+                    modal.style.transition = 'all 0.3s ease';
+                    modal.style.opacity = '1';
+                    modal.style.transform = 'scale(1)';
+                }, 10);
             }
+        });
+    });
+
+    // Close modal
+    modalClose.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
         }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.style.transition = 'all 0.3s ease';
+        modal.style.opacity = '0';
+        modal.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
     }
 
-    // Function to flip to the previous page
-    function flipPrevious() {
-        if (currentOpenPageIndex > 0) { // Cannot go before the cover
-            currentOpenPageIndex--; // Move back to the previous "open" page index
-
-            const bookToUnflip = books[currentOpenPageIndex]; // This is the book we need to unflip
-
-            // Temporarily boost z-index while unflipping
-            bookToUnflip.style.zIndex = books.length + 10; // Ensure it's on top during animation
-
-            bookToUnflip.style.transform = 'rotateY(0deg)';
-            bookToUnflip.classList.remove('flipped');
-
-            // Listen for the end of the transition for final z-index adjustment
-            bookToUnflip.addEventListener('transitionend', function handler() {
-                // Once unflipped, its z-index should return to its initial sequential order
-                bookToUnflip.style.zIndex = books.length - currentOpenPageIndex; // Return to initial stack order
-
-                // Remove the event listener
-                bookToUnflip.removeEventListener('transitionend', handler);
-            });
-
-
-            // Adjust book-content transform when returning to the cover (index 0)
-            if (currentOpenPageIndex === 0) { // When returning to the cover (index 0 is the cover)
-                bookContent.classList.remove('trnsf');
-                bookContent.classList.add('trnsf-reset');
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
-        }
-    }
+        });
+    });
 
-    // Event listener for clicks on the entire book content area
-    bookContent.addEventListener('click', (event) => {
-        const bookContentRect = bookContent.getBoundingClientRect();
-        const clickX = event.clientX - bookContentRect.left;
-
-        // Determine if click was on left (previous) or right (next) side of the visible book area
-        if (clickX < bookContentRect.width / 2) {
-            // Clicked on the left side
-            flipPrevious();
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        const nav = document.querySelector('.navigation');
+        
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            nav.style.background = 'rgba(255, 255, 255, 0.95)';
         } else {
-            // Clicked on the right side
-            flipNext();
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            nav.style.background = 'rgba(255, 255, 255, 0.9)';
         }
     });
+
+    // Add loading animation for images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+    });
+
+    // Initialize the page
+    console.log('Creative Journal Website loaded successfully!');
 });

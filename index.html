@@ -1,64 +1,134 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Flip Book sin Librerias</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kellsby Merryway - Creative Journal</title>
+    <meta name="description" content="A creative journal featuring original writing and artwork by Kellsby Merryway">
+    <meta name="keywords" content="creative writing, artwork, journal, Kellsby Merryway, creative journal">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="site-title">Kellsby Merryway</h1>
+            <p class="site-subtitle">Creative Journal</p>
+            <div class="header-divider"></div>
+        </div>
+    </header>
 
-    </head>
-    <body>
-        <div class="container" id="container">
-            <div class="book-content">
-                <div class="book">
-                    <div class="face-front" id="portada">
-                        <img src="img/frontCover.webp" alt="Book Cover">
-                    </div>
-                    <div class="face-back" id="trsf">
-                        <img src="img/page02.webp" alt="Page 1 Image">
-                    </div>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <button class="nav-btn active" data-filter="all">All Entries</button>
+            <button class="nav-btn" data-filter="writing">Writing</button>
+            <button class="nav-btn" data-filter="artwork">Artwork</button>
+            <button class="nav-btn" data-filter="mixed">Mixed Media</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="entries-container">
+            <!-- Entry 1 -->
+            <article class="entry" data-category="mixed">
+                <div class="entry-image">
+                    <img src="img/entry-01.jpg" alt="Creative entry artwork" loading="lazy">
                 </div>
-
-                <div class="book">
-                    <div class="face-front">
-                        <img src="img/page02.webp" alt="Page 2 Image">
+                <div class="entry-content">
+                    <h2 class="entry-title">The Silent Watchers</h2>
+                    <div class="entry-meta">
+                        <span class="entry-date">December 15, 2024</span>
+                        <span class="entry-author">by Kellsby Merryway</span>
                     </div>
-                    <div class="face-back">
-                        <img src="img/page03.webp" alt="Page 3 Image">
-                    </div>
+                    <p class="entry-excerpt">
+                        In the quiet corners of forgotten rooms, they wait. Not with patience, but with purpose. 
+                        The silent watchers see what we choose to ignore, hear what we refuse to acknowledge. 
+                        They are the keepers of our secrets, the guardians of our truths.
+                    </p>
+                    <button class="read-more-btn" data-entry="1">Read Full Entry</button>
                 </div>
+            </article>
 
-                <div class="book">
-                    <div class="face-front">
-                        <img src="img/page02.webp" alt="Page 4 Image">
-                    </div>
-                    <div class="face-back">
-                        <img src="img/page02.webp" alt="Page 5 Image">
-                    </div>
+            <!-- Entry 2 -->
+            <article class="entry" data-category="writing">
+                <div class="entry-image">
+                    <img src="img/entry-02.jpg" alt="Creative writing entry" loading="lazy">
                 </div>
-
-                <div class="book">
-                    <div class="face-front">
-                        <img src="img/page02.webp" alt="Page 6 Image">
+                <div class="entry-content">
+                    <h2 class="entry-title">A Gentle Home</h2>
+                    <div class="entry-meta">
+                        <span class="entry-date">December 10, 2024</span>
+                        <span class="entry-author">by Kellsby Merryway</span>
                     </div>
-                    <div class="face-back">
-                        <img src="img/page02.webp" alt="Page 7 Image">
-                    </div>
+                    <p class="entry-excerpt">
+                        Home is not a place, but a feeling. It's the warmth that wraps around you like a 
+                        familiar blanket, the comfort of knowing you belong somewhere, anywhere, everywhere. 
+                        A gentle home holds your dreams and catches your tears.
+                    </p>
+                    <button class="read-more-btn" data-entry="2">Read Full Entry</button>
                 </div>
+            </article>
 
-                <div class="book">
-                    <div class="face-front">
-                        <img src="img/page02.webp" alt="Page 8 Image">
+            <!-- Entry 3 -->
+            <article class="entry" data-category="artwork">
+                <div class="entry-image">
+                    <img src="img/entry-03.jpg" alt="Artwork entry" loading="lazy">
+                </div>
+                <div class="entry-content">
+                    <h2 class="entry-title">Whispers of Color</h2>
+                    <div class="entry-meta">
+                        <span class="entry-date">December 5, 2024</span>
+                        <span class="entry-author">by Kellsby Merryway</span>
                     </div>
-                    <div class="face-back" id="portada-back">
-                        <img src="img/backCover.webp" alt="Back Cover">
+                    <p class="entry-excerpt">
+                        Colors speak in whispers, telling stories that words cannot capture. Each hue carries 
+                        emotion, each shade holds memory. In the dance of light and pigment, we find the 
+                        language of the soul.
+                    </p>
+                    <button class="read-more-btn" data-entry="3">Read Full Entry</button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Full Entry Modal -->
+    <div class="modal" id="entryModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-text">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-meta">
+                        <span id="modalDate"></span>
+                        <span id="modalAuthor"></span>
                     </div>
+                    <div id="modalContent"></div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="js/app.js"></script>
-    </body>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Kellsby Merryway. All rights reserved.</p>
+            <p>A creative journey through words and art.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+</body>
 </html>
