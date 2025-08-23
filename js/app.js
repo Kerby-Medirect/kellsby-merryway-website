@@ -230,17 +230,35 @@ document.addEventListener('DOMContentLoaded', function() {
         img.style.transition = 'opacity 0.3s ease';
     });
 
-    // Logo debugging
-    const logo = document.querySelector('.site-logo');
-    if (logo) {
-        console.log('Logo element found:', logo);
-        console.log('Logo src:', logo.src);
-        console.log('Logo display:', getComputedStyle(logo).display);
-        console.log('Logo visibility:', getComputedStyle(logo).visibility);
-        console.log('Logo opacity:', getComputedStyle(logo).opacity);
-    } else {
-        console.error('Logo element not found!');
+    // Logo debugging - Enhanced
+    const logoLight = document.querySelector('.site-logo-light');
+    const logoDark = document.querySelector('.site-logo-dark');
+    const logoContainer = document.querySelector('.logo-container');
+    
+    console.log('=== LOGO DEBUGGING ===');
+    console.log('Logo container found:', logoContainer);
+    console.log('Light logo found:', logoLight);
+    console.log('Dark logo found:', logoDark);
+    
+    if (logoLight) {
+        console.log('Light logo src:', logoLight.src);
+        console.log('Light logo display:', getComputedStyle(logoLight).display);
+        console.log('Light logo visibility:', getComputedStyle(logoLight).visibility);
+        console.log('Light logo opacity:', getComputedStyle(logoLight).opacity);
+        console.log('Light logo width:', getComputedStyle(logoLight).width);
+        console.log('Light logo height:', getComputedStyle(logoLight).height);
     }
+    
+    if (logoDark) {
+        console.log('Dark logo src:', logoDark.src);
+        console.log('Dark logo display:', getComputedStyle(logoDark).display);
+        console.log('Dark logo visibility:', getComputedStyle(logoDark).visibility);
+        console.log('Dark logo opacity:', getComputedStyle(logoDark).opacity);
+    }
+    
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    console.log('Current theme:', currentTheme);
+    console.log('=====================');
 
     // Initialize the page
     console.log('Creative Journal Website loaded successfully!');

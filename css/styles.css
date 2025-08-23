@@ -86,6 +86,9 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 80px;
     /* Fix for squished logo */
     height: 80px;
+    /* Debug: Add visible border */
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
 }
 
 .site-logo {
@@ -96,15 +99,22 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     opacity: 1;
     visibility: visible;
+    /* Debug: Add visible border and background */
+    border: 2px solid blue;
+    background-color: rgba(0, 255, 0, 0.1);
 }
 
 /* Dual logo system for light/dark modes */
 .site-logo-light {
     display: block;
+    /* Debug: Add specific background for light logo */
+    background-color: rgba(255, 255, 0, 0.2) !important;
 }
 
 .site-logo-dark {
     display: none;
+    /* Debug: Add specific background for dark logo */
+    background-color: rgba(255, 0, 255, 0.2) !important;
 }
 
 [data-theme="dark"] .site-logo-light {
