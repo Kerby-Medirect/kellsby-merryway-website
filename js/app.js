@@ -214,6 +214,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalAuthor = document.getElementById('modalAuthor');
     const modalContent = document.getElementById('modalContent');
 
+    // Set the year button text to current year
+    const yearButton = document.querySelector('[data-filter="all"]');
+    if (yearButton) {
+        yearButton.textContent = new Date().getFullYear().toString();
+    }
+
     // Filter functionality
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
