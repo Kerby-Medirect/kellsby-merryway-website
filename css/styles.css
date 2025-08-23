@@ -35,19 +35,19 @@ body {
 
 /* Overall book dimensions and perspective */
 .book-content{
-    width: 80%;
-    min-width: 250px;
-    max-width: 600px;
-    height: 500px;
+    width: 90%;
+    min-width: 350px;
+    max-width: 800px;
+    height: 650px;
     position: relative;
-    perspective: 1000px;
+    perspective: 1200px;
     transition: 1s;
 }
 
 /* Individual book pages (front and back) */
 .book{
     position: absolute;
-    width: 65%;
+    width: 70%;
     height: 100%;
     transition: 1s;
     transform-style: preserve-3d;
@@ -104,7 +104,7 @@ body {
 
 /* Classes that will be added with Javascript */
 .trnsf{
-    transform: translateX(120px); /* Adjust if needed based on the open state */
+    transform: translateX(150px); /* Adjusted for larger book size */
 }
 .trnsf-reset{
     transform: translateX(0px);
@@ -154,6 +154,17 @@ body {
 
 /* Responsive design for navigation instructions */
 @media screen and (max-width: 768px) {
+    .book-content {
+        width: 95%;
+        min-width: 300px;
+        max-width: 500px;
+        height: 500px;
+    }
+    
+    .book {
+        width: 75%;
+    }
+    
     .navigation-instructions {
         bottom: 20px;
         left: 20px;
