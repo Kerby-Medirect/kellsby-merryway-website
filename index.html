@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kellsby Merryway - Creative Flipbook</title>
         
         <!-- SEO Meta Tags -->
@@ -22,14 +22,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         
         <!-- Styles -->
-        <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/flipbook.css">
         
         <!-- Custom Flipbook Styles -->
         <style>
             /* Custom styles for Kellsby Merryway flipbook */
-            .book-content {
+            body {
                 background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                margin: 0;
+                padding: 0;
+                font-family: 'Inter', 'Lora', sans-serif;
+                color: white;
+                overflow-x: hidden;
+            }
+            
+            .book-content {
+                background: transparent;
                 border-radius: 20px;
                 padding: 20px;
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -42,28 +50,6 @@
             
             .face-front, .face-back {
                 border-radius: 10px;
-            }
-            
-            /* Navigation instructions */
-            .flipbook-instructions {
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(0, 0, 0, 0.8);
-                color: white;
-                padding: 15px 25px;
-                border-radius: 25px;
-                font-family: 'Inter', sans-serif;
-                font-size: 0.9rem;
-                z-index: 1000;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            .flipbook-instructions span {
-                color: #ccc;
-                font-size: 0.8rem;
             }
             
             /* Page content styling */
@@ -112,19 +98,31 @@
                 border-radius: 10px;
                 margin: 20px 0;
             }
+            
+            /* Navigation instructions */
+            .flipbook-instructions {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 25px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .flipbook-instructions span {
+                color: #ccc;
+                font-size: 0.8rem;
+            }
         </style>
     </head>
 <body>
-    <!-- Header Section -->
-    <header class="site-header">
-        <div class="header-content">
-            <h1 class="logotype">KELLSBY MERRYWAY</h1>
-            <div class="divider"></div>
-            <p class="subtitle">CREATIVE FLIPBOOK</p>
-            <p class="header-description">An interactive journey through stories, artwork, and creative explorations</p>
-        </div>
-    </header>
-
     <!-- Flipbook Container -->
     <div class="container" id="container">
         <div class="book-content">
@@ -210,12 +208,6 @@
     <div class="flipbook-instructions">
         <strong>Navigation:</strong> <span>Click right side to turn page forward, left side to go back</span>
     </div>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="divider"></div>
-        <p class="copyright">&copy; 2025 Kellsby Merryway. All Rights Reserved.</p>
-    </footer>
 
     <!-- Scripts -->
     <script src="js/flipbook.js"></script>
