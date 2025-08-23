@@ -5,22 +5,6 @@
     font-family: sans-serif;
 }
 
-/* Body with gradient background */
-body {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-/* Removed 'p' styles as all pages are images now */
-/* p{
-    margin-top: 10px;
-    font-size: 18px;
-    text-align: justify;
-} */
-
 /* Container for the entire flipbook */
 .container, .book-content{
     display: flex;
@@ -30,24 +14,24 @@ body {
 .container{
     width: 100%;
     height: 100vh;
-    background: transparent; /* Remove the old background color */
+    background: #2d6f75;
 }
 
 /* Overall book dimensions and perspective */
 .book-content{
-    width: 90%;
-    min-width: 350px;
-    max-width: 800px;
-    height: 600px;
+    width: 80%;
+    min-width: 250px;
+    max-width: 600px;
+    height: 500px;
     position: relative;
-    perspective: 1200px;
+    perspective: 1000px;
     transition: 1s;
 }
 
 /* Individual book pages (front and back) */
 .book{
     position: absolute;
-    width: 60%;
+    width: 65%;
     height: 100%;
     transition: 1s;
     transform-style: preserve-3d;
@@ -81,108 +65,19 @@ body {
     border-bottom-right-radius: 3px;
 }
 
-/* Removed background image properties for portada and portada-back */
-/* We are using <img> tags directly now */
-/* #portada{
-    background: url('../img/bookPortada.jpg');
-}
-#portada-back{
-    background: url('../img/portadaBack.jpg');
-}
-#portada, #portada-back{
-    background-size: 100% 100%;
-} */
-
 /* Styles for the full-page images within the book */
 .face-front img,
 .face-back img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the full image is visible without cropping */
+    object-fit: cover; /* Ensures the image covers the entire area, cropping if necessary */
     display: block; /* Removes any extra space below the image */
-    background: white; /* White background for any empty space */
 }
 
 /* Classes that will be added with Javascript */
 .trnsf{
-    transform: translateX(120px); /* Adjusted for narrower book pages */
+    transform: translateX(120px); /* Adjust if needed based on the open state */
 }
 .trnsf-reset{
     transform: translateX(0px);
-}
-
-/* Navigation Instructions Styling */
-.navigation-instructions {
-    position: relative;
-    margin: 30px auto 0 auto;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 25px 30px;
-    border-radius: 20px;
-    font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.navigation-instructions h3 {
-    margin: 0 0 15px 0;
-    font-size: 1.2rem;
-    color: #fff;
-    font-weight: 600;
-}
-
-.navigation-instructions p {
-    margin: 8px 0;
-    line-height: 1.4;
-    color: #e0e0e0;
-}
-
-.navigation-instructions .tip {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ccc;
-    font-style: italic;
-    font-size: 0.85rem;
-}
-
-/* Responsive design for navigation instructions */
-@media screen and (max-width: 768px) {
-    .book-content {
-        width: 95%;
-        min-width: 300px;
-        max-width: 500px;
-        height: 450px;
-    }
-    
-    .book {
-        width: 65%;
-    }
-    
-    .navigation-instructions {
-        margin: 20px auto 0 auto;
-        max-width: none;
-        padding: 20px 25px;
-        font-size: 0.85rem;
-    }
-    
-    .navigation-instructions h3 {
-        font-size: 1.1rem;
-    }
-    
-    .navigation-instructions .tip {
-        font-size: 0.8rem;
-    }
-}
-
-/* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .divider {
-        transform: scaleY(0.5);
-        transform-origin: center;
-    }
 }
