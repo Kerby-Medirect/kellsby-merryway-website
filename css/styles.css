@@ -78,51 +78,31 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 2rem;
 }
 
-.logo-container {
+.header-text {
+    text-align: center;
     margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80px;
-    /* Fix for squished logo */
-    height: 80px;
-    /* Debug: Add visible border */
-    border: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.1);
 }
 
-.site-logo {
-    max-width: 300px;
-    width: auto;
-    height: 60px;
-    transition: all 0.3s ease;
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    /* Debug: Add visible border and background */
-    border: 2px solid blue;
-    background-color: rgba(0, 255, 0, 0.1);
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 0.3s ease;
 }
 
-/* Dual logo system for light/dark modes - TEMPORARILY OVERRIDDEN FOR DEBUGGING */
-.site-logo-light {
-    display: block !important;
-    /* Debug: Add specific background for light logo */
-    background-color: rgba(255, 255, 0, 0.2) !important;
-}
-
-.site-logo-dark {
-    display: block !important;
-    /* Debug: Add specific background for dark logo */
-    background-color: rgba(255, 0, 255, 0.2) !important;
-}
-
-[data-theme="dark"] .site-logo-light {
-    display: block !important;
-}
-
-[data-theme="dark"] .site-logo-dark {
-    display: block !important;
+.site-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
 }
 
 .site-title {
@@ -455,13 +435,12 @@ h1, h2, h3, h4, h5, h6 {
         padding: 1.5rem 0;
     }
     
-    .logo-container {
-        height: 70px;
+    .site-title {
+        font-size: 3rem;
     }
     
-    .site-logo {
-        max-width: 250px;
-        height: 50px;
+    .site-subtitle {
+        font-size: 1.2rem;
     }
     
     .theme-toggle {
@@ -517,13 +496,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
-    .logo-container {
-        height: 60px;
+    .site-title {
+        font-size: 2.5rem;
     }
     
-    .site-logo {
-        max-width: 200px;
-        height: 40px;
+    .site-subtitle {
+        font-size: 1.1rem;
     }
     
     .theme-toggle {
