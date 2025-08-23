@@ -38,7 +38,7 @@ body {
     width: 90%;
     min-width: 350px;
     max-width: 800px;
-    height: 650px;
+    height: 600px;
     position: relative;
     perspective: 1200px;
     transition: 1s;
@@ -98,8 +98,9 @@ body {
 .face-back img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire area, cropping if necessary */
+    object-fit: contain; /* Ensures the full image is visible without cropping */
     display: block; /* Removes any extra space below the image */
+    background: white; /* White background for any empty space */
 }
 
 /* Classes that will be added with Javascript */
@@ -158,7 +159,7 @@ body {
         width: 95%;
         min-width: 300px;
         max-width: 500px;
-        height: 500px;
+        height: 450px;
     }
     
     .book {
