@@ -150,12 +150,18 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 20px;
+    padding-right: 40px; /* Extra padding on the right for the arrow */
     border-radius: 20px;
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    appearance: none; /* Remove default browser styling */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
 }
 
 .year-select:focus {
@@ -408,6 +414,12 @@ body {
     .filter-btn {
         padding: 10px 18px;
         font-size: 0.8rem;
+    }
+    
+    .year-select {
+        padding: 8px 16px 8px 16px;
+        padding-right: 35px; /* Slightly less padding on mobile */
+        font-size: 0.85rem;
     }
     
     .gallery-grid {
