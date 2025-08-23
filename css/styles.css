@@ -84,17 +84,35 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     align-items: center;
     min-height: 80px;
+    /* Fix for squished logo */
+    height: 80px;
 }
 
 .site-logo {
     max-width: 300px;
-    width: 100%;
-    height: auto;
-    max-height: 80px;
+    width: auto;
+    height: 60px;
     transition: all 0.3s ease;
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+/* Dual logo system for light/dark modes */
+.site-logo-light {
+    display: block;
+}
+
+.site-logo-dark {
+    display: none;
+}
+
+[data-theme="dark"] .site-logo-light {
+    display: none;
+}
+
+[data-theme="dark"] .site-logo-dark {
+    display: block;
 }
 
 .site-title {
@@ -103,20 +121,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
     transition: color 0.3s ease;
-}
-
-/* Logo filter for dark mode compatibility */
-:root {
-    --logo-filter: none;
-}
-
-[data-theme="dark"] {
-    --logo-filter: brightness(0) invert(1);
-}
-
-/* Ensure logo is always visible */
-.site-logo {
-    filter: none !important;
 }
 
 /* Theme Toggle */
@@ -441,9 +445,13 @@ h1, h2, h3, h4, h5, h6 {
         padding: 1.5rem 0;
     }
     
+    .logo-container {
+        height: 70px;
+    }
+    
     .site-logo {
         max-width: 250px;
-        max-height: 60px;
+        height: 50px;
     }
     
     .theme-toggle {
@@ -499,9 +507,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 480px) {
+    .logo-container {
+        height: 60px;
+    }
+    
     .site-logo {
         max-width: 200px;
-        max-height: 50px;
+        height: 40px;
     }
     
     .theme-toggle {
