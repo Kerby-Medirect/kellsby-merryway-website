@@ -204,16 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add scroll effect to header
     window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        const nav = document.querySelector('.navigation');
-        
-        if (window.scrollY > 100) {
-            header.style.background = 'var(--surface-primary)';
-            nav.style.background = 'var(--surface-secondary)';
-        } else {
-            header.style.background = 'var(--surface-primary)';
-            nav.style.background = 'var(--surface-secondary)';
-        }
+        // Removed scroll effect to keep navigation connected to header
+        // Navigation now stays visually connected to the header
     });
 
     // Add loading animation for images
