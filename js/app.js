@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "The Silent Watchers",
             date: "December 15, 2024",
             month: "december",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "A Gentle Home",
             date: "December 10, 2024",
             month: "december",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Whispers of Color",
             date: "December 5, 2024",
             month: "december",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-03.jpg",
             content: `
@@ -100,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Autumn's Embrace",
             date: "November 20, 2024",
             month: "november",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -116,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "October Dreams",
             date: "October 15, 2024",
             month: "october",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -132,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "September's Song",
             date: "September 25, 2024",
             month: "september",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-01.jpg",
             content: `
@@ -148,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "August Heat",
             date: "August 10, 2024",
             month: "august",
+            year: "2024",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
@@ -158,6 +165,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>I think August is nature's way of teaching us about intensity—about how to embrace the heat, to find beauty in discomfort, to appreciate the fullness of experience. It's a month that doesn't apologize for being what it is, and there's something admirable about that kind of authenticity.</p>
                 
                 <p>August reminds me to slow down, to appreciate the moment, to find joy in the simple things—a cold drink, a shady spot, the feeling of the sun on my skin. It's a month that teaches us to be present, to savor what we have while we have it.</p>
+            `
+        },
+        8: {
+            title: "New Year's Promise",
+            date: "January 15, 2025",
+            month: "january",
+            year: "2025",
+            author: "by Kellsby Merryway",
+            image: "img/entry-01.jpg",
+            content: `
+                <p>A new year brings fresh possibilities, like a blank canvas waiting for the first stroke of color.</p>
+                
+                <p>There's something magical about January—the way it feels like a fresh start, a chance to begin again. It's as if the universe gives us permission to reinvent ourselves, to try new things, to dream bigger dreams.</p>
+                
+                <p>I think January is nature's way of teaching us about hope. Even in the depths of winter, when the world seems cold and dark, there's the promise of spring just around the corner. It's a reminder that nothing lasts forever, that change is always possible.</p>
+                
+                <p>January reminds me to be brave, to take risks, to believe in the impossible. It's a month that says, "Why not?" when the rest of the year might say, "Why bother?" It's a month of potential, of promise, of possibility.</p>
+            `
+        },
+        9: {
+            title: "February's Heart",
+            date: "February 14, 2025",
+            month: "february",
+            year: "2025",
+            author: "by Kellsby Merryway",
+            image: "img/entry-02.jpg",
+            content: `
+                <p>February teaches us about love in all its forms—romance, friendship, and the love we have for ourselves.</p>
+                
+                <p>February is the month of the heart, not just because of Valentine's Day, but because it's a time when we're most aware of our need for connection. In the middle of winter, when the world feels cold and distant, we're reminded of the warmth that comes from loving and being loved.</p>
+                
+                <p>I think February is nature's way of teaching us about vulnerability. It's a month that asks us to open our hearts, to risk being hurt, to believe in the power of love even when it seems impossible. It's a reminder that love is worth the risk, that connection is worth the effort.</p>
+                
+                <p>February reminds me to be kind to myself, to practice self-love, to remember that I am worthy of love and respect. It's a month that teaches us that the most important relationship we have is the one with ourselves.</p>
             `
         }
     };
@@ -185,7 +226,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Filter entries
             entries.forEach(entry => {
-                if (filter === 'all' || entry.getAttribute('data-month') === filter) {
+                if (filter === 'all') {
+                    // Show entries from current year (2025) when "Year" is selected
+                    const currentYear = new Date().getFullYear().toString();
+                    const entryYear = entry.querySelector('.entry-date').textContent.split(', ')[1];
+                    if (entryYear === currentYear) {
+                        entry.style.display = 'block';
+                        entry.style.animation = 'fadeInUp 0.6s ease-out';
+                    } else {
+                        entry.style.display = 'none';
+                    }
+                } else if (entry.getAttribute('data-month') === filter) {
                     entry.style.display = 'block';
                     entry.style.animation = 'fadeInUp 0.6s ease-out';
                 } else {
