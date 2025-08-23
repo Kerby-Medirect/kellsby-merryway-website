@@ -19,6 +19,7 @@ body {
     font-family: 'Inter', 'Lora', sans-serif; /* Inter as primary, Lora as fallback */
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh;
 }
 
 /* ======================== */
@@ -39,10 +40,12 @@ body {
 
 .site-header {
     text-align: center;
-    padding: 60px 0 40px 0;
+    padding: 40px 0 30px 0;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border-radius: 0 0 20px 20px;
+    position: relative;
+    z-index: 100;
 }
 
 .header-content {
@@ -88,290 +91,26 @@ body {
 }
 
 /* ======================== */
-/* 4. Gallery Navigation    */
+/* 4. Flipbook Integration  */
 /* ======================== */
 
-.gallery-nav {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-.filter-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-}
-
-.filter-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-}
-
-.filter-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-}
-
-.filter-btn.active {
-    background: #fff;
-    color: #0a0a0a;
-    font-weight: 600;
-}
-
-.year-filter {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.year-select {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    padding: 10px 20px 10px 20px;
-    padding-right: 40px; /* Extra padding on the right for the arrow */
-    border-radius: 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    appearance: none; /* Remove default browser styling */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 16px;
-}
-
-.year-select:focus {
-    outline: none;
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.year-select option {
-    background: #1a1a1a;
-    color: #fff;
+/* Ensure flipbook container works well with our layout */
+.container {
+    margin-bottom: 30px;
 }
 
 /* ======================== */
-/* 5. Gallery Grid          */
-/* ======================== */
-
-.gallery-container {
-    margin-bottom: 60px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px 0;
-}
-
-.gallery-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-.gallery-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.gallery-item-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-item-image {
-    transform: scale(1.05);
-}
-
-.gallery-item-content {
-    padding: 25px;
-}
-
-.gallery-item-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-.gallery-item-date {
-    font-size: 0.8rem;
-    color: #999;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.gallery-item-excerpt {
-    font-size: 0.95rem;
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.gallery-item-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.gallery-item-category {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.gallery-item-year {
-    color: #999;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-/* ======================== */
-/* 6. Lightbox Modal        */
-/* ======================== */
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-}
-
-.lightbox-content {
-    position: relative;
-    width: 90%;
-    max-width: 1000px;
-    max-height: 90vh; /* Limit height to 90% of viewport */
-    margin: 5vh auto; /* Center vertically with 5vh margin */
-    background: #1a1a1a;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    transition: color 0.3s ease;
-}
-
-.close-lightbox:hover {
-    color: #ccc;
-}
-
-.lightbox-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 100%; /* Take full height of container */
-}
-
-.lightbox-image-container {
-    width: 100%;
-    max-height: 500px;
-    overflow: hidden;
-}
-
-.lightbox-image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.lightbox-text {
-    padding: 30px;
-    flex: 1;
-    overflow-y: auto; /* Enable scrolling for text content */
-}
-
-.lightbox-text h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-.lightbox-text p {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.lightbox-text div {
-    font-size: 1rem;
-    color: #ccc;
-    line-height: 1.7;
-}
-
-/* ======================== */
-/* 7. Footer Styling        */
+/* 5. Footer Styling        */
 /* ======================== */
 
 .site-footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 20px 20px 0 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 100;
 }
 
 .copyright {
@@ -381,7 +120,7 @@ body {
 }
 
 /* ======================== */
-/* 8. Enhanced Media Queries for Responsiveness */
+/* 6. Enhanced Media Queries for Responsiveness */
 /* ======================== */
 
 /* Mobile First - Small devices (phones, 320px and up) */
@@ -391,67 +130,31 @@ body {
     }
     
     .site-header {
-        padding: 40px 0 30px 0;
-        margin-bottom: 30px;
+        padding: 30px 0 20px 0;
+        margin-bottom: 20px;
     }
     
     .logotype {
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 15px;
     }
     
     .subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         letter-spacing: 0.2em;
     }
     
     .header-description {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         padding: 0 10px;
     }
     
-    .gallery-nav {
-        padding: 20px 15px;
-        margin-bottom: 30px;
+    .container {
+        margin-bottom: 20px;
     }
     
-    .filter-section {
-        gap: 8px;
-    }
-    
-    .filter-btn {
-        padding: 10px 18px;
-        font-size: 0.8rem;
-    }
-    
-    .year-select {
-        padding: 8px 16px 8px 16px;
-        padding-right: 35px; /* Slightly less padding on mobile */
-        font-size: 0.85rem;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 10px 0;
-    }
-    
-    .gallery-item-content {
-        padding: 20px;
-    }
-    
-    .lightbox-content {
-        width: 95%;
-        max-height: 95vh;
-        margin: 2.5vh auto;
-    }
-    
-    .lightbox-text {
-        padding: 20px;
-    }
-    
-    .lightbox-text h3 {
-        font-size: 1.4rem;
+    .site-footer {
+        padding: 20px 0;
     }
 }
 
@@ -462,48 +165,38 @@ body {
     }
     
     .site-header {
-        padding: 50px 0 35px 0;
-        margin-bottom: 35px;
+        padding: 35px 0 25px 0;
+        margin-bottom: 25px;
     }
     
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 25px;
-    }
-    
-    .filter-section {
-        gap: 10px;
-    }
-    
-    .filter-btn {
-        padding: 11px 20px;
+    .container {
+        margin-bottom: 25px;
     }
 }
 
 /* Large devices (desktops, 769px and up) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 28px;
+    .container {
+        margin-bottom: 30px;
     }
 }
 
 /* Extra large devices (large desktops, 1025px and up) */
 @media (min-width: 1025px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 35px;
+    .container {
+        margin-bottom: 35px;
     }
 }
 
 /* Landscape orientation adjustments for mobile */
 @media (max-width: 768px) and (orientation: landscape) {
     .site-header {
-        padding: 30px 0 25px 0;
+        padding: 25px 0 20px 0;
+        margin-bottom: 20px;
     }
     
-    .gallery-nav {
-        padding: 20px;
+    .container {
+        margin-bottom: 20px;
     }
 }
 
@@ -528,13 +221,8 @@ body {
         padding: 0;
     }
     
-    .gallery-nav {
+    .container {
         display: none;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
     }
 }
 
@@ -543,65 +231,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar styling for lightbox */
-.lightbox-body::-webkit-scrollbar,
-.lightbox-text::-webkit-scrollbar {
-    width: 8px;
-}
-
-.lightbox-body::-webkit-scrollbar-track,
-.lightbox-text::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.lightbox-body::-webkit-scrollbar-thumb,
-.lightbox-text::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-.lightbox-body::-webkit-scrollbar-thumb:hover,
-.lightbox-text::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-/* Firefox scrollbar styling */
-.lightbox-body,
-.lightbox-text {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
-}
-
 /* Focus styles for accessibility */
-.filter-btn:focus,
-.year-select:focus,
-.gallery-item:focus {
+*:focus {
     outline: 2px solid #fff;
     outline-offset: 2px;
-}
-
-/* Loading animation */
-.gallery-item.loading {
-    opacity: 0.7;
-    transform: scale(0.95);
-}
-
-/* Empty state */
-.gallery-empty {
-    text-align: center;
-    padding: 60px 20px;
-    color: #666;
-}
-
-.gallery-empty h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #999;
-}
-
-.gallery-empty p {
-    font-size: 1rem;
-    color: #666;
 }

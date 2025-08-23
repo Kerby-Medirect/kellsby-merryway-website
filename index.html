@@ -3,21 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-        <title>Kellsby Merryway - Creative Gallery</title>
+        <title>Kellsby Merryway - Creative Flipbook</title>
         
         <!-- SEO Meta Tags -->
-        <meta name="description" content="A creative gallery featuring artwork, creative writing, and comics by Kellsby Merryway. Explore stories, illustrations, and creative projects.">
-        <meta name="keywords" content="creative gallery, artwork, creative writing, comics, illustrations, Kellsby Merryway">
+        <meta name="description" content="A creative flipbook featuring artwork, creative writing, and comics by Kellsby Merryway. Experience stories, illustrations, and creative projects in an interactive book format.">
+        <meta name="keywords" content="creative flipbook, artwork, creative writing, comics, illustrations, Kellsby Merryway, interactive book">
         <meta name="author" content="Kellsby Merryway">
         
         <!-- Open Graph Meta Tags for Social Media -->
-        <meta property="og:title" content="Kellsby Merryway - Creative Gallery">
-        <meta property="og:description" content="A creative gallery featuring artwork, creative writing, and comics by Kellsby Merryway.">
+        <meta property="og:title" content="Kellsby Merryway - Creative Flipbook">
+        <meta property="og:description" content="A creative flipbook featuring artwork, creative writing, and comics by Kellsby Merryway.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://kellsbymerryway.com">
-        
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="img/placeholder.jpg">
         
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,72 +23,201 @@
         
         <!-- Styles -->
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="flip-book/css/styles.css">
+        
+        <!-- Custom Flipbook Styles -->
+        <style>
+            /* Custom styles for Kellsby Merryway flipbook */
+            .book-content {
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+            
+            .book {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+            .face-front, .face-back {
+                border-radius: 10px;
+            }
+            
+            /* Navigation instructions */
+            .flipbook-instructions {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 25px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .flipbook-instructions span {
+                color: #ccc;
+                font-size: 0.8rem;
+            }
+            
+            /* Page content styling */
+            .page-content {
+                padding: 40px;
+                text-align: center;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+            
+            .page-title {
+                font-family: 'Inter', sans-serif;
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+                background: linear-gradient(45deg, #fff, #e0e0e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .page-subtitle {
+                font-family: 'Lora', serif;
+                font-size: 1.2rem;
+                color: #ccc;
+                margin-bottom: 30px;
+                letter-spacing: 0.1em;
+            }
+            
+            .page-description {
+                font-family: 'Inter', sans-serif;
+                font-size: 1rem;
+                color: #999;
+                line-height: 1.6;
+                max-width: 400px;
+            }
+            
+            .page-image {
+                max-width: 80%;
+                height: auto;
+                border-radius: 10px;
+                margin: 20px 0;
+            }
+        </style>
     </head>
 <body>
-
-    <div class="site-wrapper">
-        <!-- Header Section -->
-        <header class="site-header">
-            <div class="header-content">
-                <h1 class="logotype">KELLSBY MERRYWAY</h1>
-                <div class="divider"></div>
-                <p class="subtitle">CREATIVE GALLERY</p>
-                <p class="header-description">A collection of stories, artwork, and creative explorations</p>
-            </div>
-        </header>
-
-        <!-- Navigation & Filters -->
-        <nav class="gallery-nav">
-            <div class="nav-container">
-                <div class="filter-section">
-                    <button class="filter-btn active" data-filter="all">All Work</button>
-                    <button class="filter-btn" data-filter="stories">Stories</button>
-                    <button class="filter-btn" data-filter="poems">Poems</button>
-                    <button class="filter-btn" data-filter="comics">Comics</button>
-                    <button class="filter-btn" data-filter="artwork">Artwork</button>
-                </div>
-                
-                <div class="year-filter">
-                    <select class="year-select">
-                        <option value="all">All Years</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                    </select>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Gallery Grid -->
-        <main class="gallery-container">
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Gallery items will be dynamically generated by JavaScript -->
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="site-footer">
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="logotype">KELLSBY MERRYWAY</h1>
             <div class="divider"></div>
-            <p class="copyright">&copy; 2025 Kellsby Merryway. All Rights Reserved.</p>
-        </footer>
-    </div>
+            <p class="subtitle">CREATIVE FLIPBOOK</p>
+            <p class="header-description">An interactive journey through stories, artwork, and creative explorations</p>
+        </div>
+    </header>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="close-lightbox">&times;</span>
-            <div class="lightbox-body">
-                <div class="lightbox-image-container">
-                    <img id="lightboxImage" src="" alt="">
+    <!-- Flipbook Container -->
+    <div class="container" id="container">
+        <div class="book-content">
+            <div class="book">
+                <div class="face-front" id="portada">
+                    <div class="page-content">
+                        <h2 class="page-title">Welcome</h2>
+                        <p class="page-subtitle">KELLSBY MERRYWAY</p>
+                        <p class="page-description">Click anywhere on the right side of this book to begin your journey through creative stories, poems, and artwork.</p>
+                        <img src="img/a-gentle-home.jpg" alt="Welcome Image" class="page-image">
+                    </div>
                 </div>
-                <div class="lightbox-text">
-                    <h3 id="lightboxTitle"></h3>
-                    <p id="lightboxDate"></p>
-                    <div id="lightboxContent"></div>
+                <div class="face-back" id="trsf">
+                    <div class="page-content">
+                        <h2 class="page-title">A Gentle Home</h2>
+                        <p class="page-subtitle">A SHORT STORY</p>
+                        <p class="page-description">The old house stood on a hill overlooking a quiet cove, its windows like tired eyes watching the tide. It wasn't grand, but it was gentle.</p>
+                        <img src="img/a-gentle-home.jpg" alt="A Gentle Home" class="page-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="face-front">
+                    <div class="page-content">
+                        <h2 class="page-title">Ode to the First Rain</h2>
+                        <p class="page-subtitle">A POEM</p>
+                        <p class="page-description">The air grew heavy, thick with waiting, a hush fell on the sun-baked ground. Then one drop, two, a hesitant greeting...</p>
+                        <img src="img/placeholder.jpg" alt="First Rain" class="page-image">
+                    </div>
+                </div>
+                <div class="face-back">
+                    <div class="page-content">
+                        <h2 class="page-title">The Silent Watchers</h2>
+                        <p class="page-subtitle">A COMIC</p>
+                        <p class="page-description">A mysterious comic strip about silent watchers in the city, exploring themes of vigilance and unseen forces.</p>
+                        <img src="img/the-silent-watchers.jpg" alt="The Silent Watchers" class="page-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="face-front">
+                    <div class="page-content">
+                        <h2 class="page-title">Autumn Whispers</h2>
+                        <p class="page-subtitle">ARTWORK</p>
+                        <p class="page-description">Autumn arrives not with a bang, but with a whisper. The first leaves to change are always the most courageous.</p>
+                        <img src="img/placeholder.jpg" alt="Autumn" class="page-image">
+                    </div>
+                </div>
+                <div class="face-back">
+                    <div class="page-content">
+                        <h2 class="page-title">Winter Solstice</h2>
+                        <p class="page-subtitle">A POEM</p>
+                        <p class="page-description">The shortest day, the longest night, when shadows stretch across the snow. But in the darkness, hidden light...</p>
+                        <img src="img/placeholder.jpg" alt="Winter Solstice" class="page-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="book">
+                <div class="face-front">
+                    <div class="page-content">
+                        <h2 class="page-title">Creative Journey</h2>
+                        <p class="page-subtitle">REFLECTIONS</p>
+                        <p class="page-description">Every story, every poem, every piece of art is a step in the creative journey. Thank you for sharing this experience.</p>
+                        <img src="img/placeholder.jpg" alt="Creative Journey" class="page-image">
+                    </div>
+                </div>
+                <div class="face-back" id="portada-back">
+                    <div class="page-content">
+                        <h2 class="page-title">The End</h2>
+                        <p class="page-subtitle">KELLSBY MERRYWAY</p>
+                        <p class="page-description">Click on the left side to return to the beginning, or refresh to start over. Thank you for exploring this creative collection.</p>
+                        <img src="img/placeholder.jpg" alt="The End" class="page-image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- Navigation Instructions -->
+    <div class="flipbook-instructions">
+        <strong>Navigation:</strong> <span>Click right side to turn page forward, left side to go back</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="divider"></div>
+        <p class="copyright">&copy; 2025 Kellsby Merryway. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="flip-book/js/app.js"></script>
 </body>
 </html>

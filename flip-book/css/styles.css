@@ -1,0 +1,109 @@
+/* Reset basic styles */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Removed 'p' styles as all pages are images now */
+/* p{
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: justify;
+} */
+
+/* Container for the entire flipbook */
+.container, .book-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #2d6f75;
+}
+
+/* Overall book dimensions and perspective */
+.book-content{
+    width: 80%;
+    min-width: 250px;
+    max-width: 600px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px;
+    transition: 1s;
+}
+
+/* Individual book pages (front and back) */
+.book{
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform-origin: left;
+}
+
+/* Styles for the front and back faces of each page */
+.face-front, .face-back{
+    width: 100%;
+    height: 100%;
+    /* No background white if images cover completely, can remove or keep for fallback */
+    background: white;
+    /* Set padding to 0 for full-page images */
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures images don't spill out */
+}
+
+.face-front{
+    box-shadow: inset 3px 0px 20px -7px black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.face-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(-1px) rotateY(180deg);
+    box-shadow: inset -3px 1px 20px -7px black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* Removed background image properties for portada and portada-back */
+/* We are using <img> tags directly now */
+/* #portada{
+    background: url('../img/bookPortada.jpg');
+}
+#portada-back{
+    background: url('../img/portadaBack.jpg');
+}
+#portada, #portada-back{
+    background-size: 100% 100%;
+} */
+
+/* Styles for the full-page images within the book */
+.face-front img,
+.face-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area, cropping if necessary */
+    display: block; /* Removes any extra space below the image */
+}
+
+/* Classes that will be added with Javascript */
+.trnsf{
+    transform: translateX(120px); /* Adjust if needed based on the open state */
+}
+.trnsf-reset{
+    transform: translateX(0px);
+}
+
+/* Removed @media for p as all pages are images now */
+/* @media screen and (max-width: 800px){
+    p{
+        font-size: 16px;
+    }
+} */
