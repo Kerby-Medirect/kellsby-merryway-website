@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-container {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,22 +114,6 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="dark"] {
     --logo-filter: brightness(0) invert(1);
-}
-
-.site-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-}
-
-.header-divider {
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-    margin: 0 auto;
-    transition: background 0.3s ease;
 }
 
 /* Theme Toggle */
@@ -515,10 +499,6 @@ h1, h2, h3, h4, h5, h6 {
     .site-logo {
         max-width: 200px;
         max-height: 50px;
-    }
-    
-    .site-subtitle {
-        font-size: 1rem;
     }
     
     .theme-toggle {
