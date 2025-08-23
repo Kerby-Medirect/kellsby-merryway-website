@@ -1,0 +1,253 @@
+/* ======================== */
+/* 1. Global & Base Styles  */
+/* ======================== */
+
+/* A simple reset for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Black background */
+    color: #fff;            /* White text */
+    font-family: 'Lora', serif; /* All text will now use this new legible font */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the wrapper fills the viewport height */
+}
+
+/* ======================== */
+/* 2. Main Layout Container */
+/* ======================== */
+
+.site-wrapper {
+    width: 90%;
+    max-width: 1400px;
+    margin: 20px; /* Space around the entire layout */
+    background-color: #000;
+}
+
+/* ======================== */
+/* 3. Header Styling        */
+/* ======================== */
+
+.site-header {
+    text-align: center;
+    padding: 40px 0 20px 0; /* Space above, below, and on the sides */
+}
+
+.logotype {
+    font-size: 3rem;
+    font-weight: normal; /* To match the look of a logotype */
+    letter-spacing: 0.2em; /* Spacing between letters */
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 1px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto; /* Center the divider horizontally */
+}
+
+/* ======================== */
+/* 4. Two-Column Layout     */
+/* ======================== */
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+/* ======================== */
+/* 5. Sidebar (Table of Contents) */
+/* ======================== */
+
+.sidebar-toc {
+    flex: 0 0 200px; /* Fix the sidebar width */
+    margin-right: 50px; /* Space between sidebar and main content */
+}
+
+.year {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.month-nav ul {
+    list-style: none; /* Remove bullet points */
+    margin-bottom: 20px;
+}
+
+/* Default style for all month links */
+
+/* We'll still give a hover effect for clickable links */
+.month-nav a:hover:not(.disabled) {
+    color: #fff; /* Only clickable links will turn white on hover */
+    transform: translateX(5px);
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.month-nav a {
+    text-decoration: none;
+    color: #444; /* Default color is now the muted gray */
+    font-weight: normal; /* Default font weight is not bold */
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: block;
+    padding: 3px 0;
+}
+
+/* Disables click events for disabled links */
+.month-nav a.disabled {
+    pointer-events: none;
+}
+
+.post-count {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: normal;
+}
+
+.view-all-link {
+    color: #888 !important;
+    font-weight: 600 !important;
+    border-top: 1px solid #333;
+    padding-top: 10px !important;
+    margin-top: 10px;
+}
+
+/* Styling for the selected month link - this will override the default */
+.month-nav a.selected {
+    color: #fff; /* Selected month is white */
+    font-weight: bold; /* Selected month is bold */
+    position: relative;
+}
+
+/* ======================== */
+/* 6. Journal Post Styling  */
+/* ======================== */
+
+/* Add space between individual posts */
+.post-entry {
+    margin-bottom: 60px; /* A good amount of space to separate posts */
+}
+
+.post-entry:last-child {
+    margin-bottom: 0; /* No margin on the last post to avoid extra space at the end */
+}
+
+.journal-post-container {
+    flex-grow: 1; /* Allow the content area to take up the remaining space */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for content changes */
+}
+
+/* Animation for content changes */
+.post-entry {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.post-date {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.post-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+}
+
+.post-author {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem; /* Space between paragraphs */
+}
+
+.post-content img,
+.post-content video {
+    max-width: 100%; /* Ensures images and videos are responsive */
+    height: auto;
+    margin: 20px 0;
+    display: block; /* To center with margin auto if needed */
+}
+
+/* ======================== */
+/* 7. Footer Styling        */
+/* ======================== */
+
+.site-footer {
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.site-footer .divider {
+    background-color: #fff;
+    width: 60%;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* ======================== */
+/* 8. Media Queries for Responsiveness */
+/* ======================== */
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Stack the sidebar and content on smaller screens */
+    }
+
+    .sidebar-toc {
+        margin-right: 0;
+        margin-bottom: 40px;
+        text-align: center;
+        flex: auto;
+    }
+
+    .month-nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
