@@ -1,23 +1,22 @@
-// app.js
+// app.js - Gallery Version
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Journal Post Data
-    const journalPosts = [
+    // 1. Gallery Data
+    const galleryItems = [
         {
             id: '2025-08-02',
-            date: 'AUGUST 02, 2025',
             title: 'A Gentle Home',
-            author: 'A SHORT STORY BY KELLSBY MERRYWAY',
-            month: 'AUGUST',
+            date: 'AUGUST 02, 2025',
+            category: 'stories',
             year: '2025',
+            image: 'img/a-gentle-home.jpg',
+            excerpt: 'A short story about an old house overlooking a quiet cove, built not of stone and wood alone, but of the silent moments that collect over time.',
             content: `
                 <p>
                     The old house stood on a hill overlooking a quiet cove, its windows like tired eyes watching the tide. 
-                    It wasn’t grand, but it was gentle. The floorboards sang a soft tune with every step, and the scent of aged cedar and sea salt was a permanent perfume.
+                    It wasn't grand, but it was gentle. The floorboards sang a soft tune with every step, and the scent of aged cedar and sea salt was a permanent perfume.
                     This was a home built not of stone and wood alone, but of the silent moments that collect over time.
                 </p>
-                <img src="img/a-gentle-home.jpg" alt="Placeholder image for a gentle home.">
                 <p>
                     In the mornings, sunbeams would stretch across the living room like lazy cats, illuminating dust motes dancing in the air. 
                     They would land on the faded floral patterns of an old armchair, making it glow. 
@@ -28,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: '2025-08-05',
-            date: 'AUGUST 05, 2025',
             title: 'Ode to the First Rain',
-            author: 'A POEM BY KELLSBY MERRYWAY',
-            month: 'AUGUST',
+            date: 'AUGUST 05, 2025',
+            category: 'poems',
             year: '2025',
+            image: 'img/placeholder.jpg',
+            excerpt: 'A poem capturing the moment when the first raindrops break a summer drought, bringing life and renewal to the parched earth.',
             content: `
                 <p>
                     The air grew heavy, thick with waiting,<br>
@@ -44,149 +44,219 @@ document.addEventListener('DOMContentLoaded', () => {
                     The dust rose up in a fragrant sigh,<br>
                     The leaves began their verdant dance.<br>
                     A new, clean world beneath the sky,<br>
-                    A moment born of water’s chance.
+                    A moment born of water's chance.
                 </p>
             `
         },
         {
             id: '2025-09-10',
-            date: 'SEPTEMBER 10, 2025',
             title: 'The Silent Watchers',
-            author: 'A COMIC BY KELLSBY MERRYWAY',
-            month: 'SEPTEMBER',
+            date: 'SEPTEMBER 10, 2025',
+            category: 'comics',
             year: '2025',
+            image: 'img/the-silent-watchers.jpg',
+            excerpt: 'A mysterious comic strip about silent watchers in the city, exploring themes of vigilance and unseen forces.',
             content: `
                 <p>
                     A mysterious comic strip about silent watchers in the city. The hero stands, looking out at the city, 
                     when a sudden shadow falls over the city streets. He turns, ready for the challenge ahead.
                 </p>
-                <img src="img/the-silent-watchers.jpg" alt="The Silent Watchers - Comic Strip">
                 <p>
                     This comic explores themes of vigilance and the unseen forces that shape our urban landscapes. 
                     Each panel tells a story of observation and preparation.
                 </p>
             `
         },
-    ];
-    
-    // A list of all months for a complete sidebar
-    const allMonths = [
-        'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
-        'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'
-    ];
-
-
-    // 2. DOM Elements to Manipulate
-    const sidebarToc = document.querySelector('.sidebar-toc');
-    const postContainer = document.querySelector('.journal-post-container');
-
-    // 3. Render all posts for a selected month
-    function renderPostsForMonth(year, month) {
-        // Find all posts that match the selected year and month
-        let postsForMonth;
-        if (month === 'all') {
-            postsForMonth = journalPosts.filter(p => p.year === year);
-        } else {
-            postsForMonth = journalPosts.filter(p => p.year === year && p.month === month);
+        {
+            id: '2025-10-15',
+            title: 'Autumn Whispers',
+            date: 'OCTOBER 15, 2025',
+            category: 'artwork',
+            year: '2025',
+            image: 'img/placeholder.jpg',
+            excerpt: 'An artistic exploration of autumn colors and the quiet beauty of seasonal change.',
+            content: `
+                <p>
+                    Autumn arrives not with a bang, but with a whisper. The first leaves to change are always the most courageous, 
+                    leading the way for their siblings to follow. Gold and crimson paint the landscape in gentle strokes.
+                </p>
+                <p>
+                    There's something magical about watching the world prepare for winter's rest. The trees shed their summer clothes 
+                    and stand bare and proud, ready for the cold months ahead.
+                </p>
+            `
+        },
+        {
+            id: '2026-01-20',
+            title: 'Winter Solstice',
+            date: 'JANUARY 20, 2026',
+            category: 'poems',
+            year: '2026',
+            image: 'img/placeholder.jpg',
+            excerpt: 'A contemplative poem about the shortest day of the year and the promise of returning light.',
+            content: `
+                <p>
+                    The shortest day, the longest night,<br>
+                    When shadows stretch across the snow.<br>
+                    But in the darkness, hidden light,<br>
+                    A promise that the sun will grow.
+                </p>
+                <p>
+                    The earth tilts back toward the sun,<br>
+                    Each day a little longer now.<br>
+                    The winter's work is nearly done,<br>
+                    Spring's seeds are sleeping in the ground.
+                </p>
+            `
         }
+    ];
 
-        // Clear the post container before adding new content
-        postContainer.innerHTML = '';
+    // 2. DOM Elements
+    const galleryGrid = document.getElementById('galleryGrid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const yearSelect = document.querySelector('.year-select');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDate = document.getElementById('lightboxDate');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const closeLightbox = document.querySelector('.close-lightbox');
 
-        if (postsForMonth.length > 0) {
-            postsForMonth.forEach(post => {
-                const postHTML = `
-                    <div class="post-entry">
-                        <p class="post-date">${post.date}</p>
-                        <h2 class="post-title">${post.title}</h2>
-                        <p class="post-author">${post.author}</p>
-                        <div class="post-content">
-                            ${post.content}
-                        </div>
-                    </div>
-                `;
-                // Append the new post's HTML to the container
-                postContainer.innerHTML += postHTML;
-            });
-            
-            // Remove the 'selected' class from any currently selected link
-            const currentSelected = document.querySelector('.month-nav a.selected');
-            if (currentSelected) {
-                currentSelected.classList.remove('selected');
-            }
+    // 3. Current Filters
+    let currentFilter = 'all';
+    let currentYear = 'all';
 
-            // Find the link corresponding to the current month and add the 'selected' class
-            const newSelectedLink = document.querySelector(
-                `.month-nav a[data-year="${year}"][data-month="${month}"]`
-            );
-            if (newSelectedLink) {
-                newSelectedLink.classList.add('selected');
-            }
-        }
+    // 4. Initialize Gallery
+    function initGallery() {
+        renderGallery();
+        setupEventListeners();
     }
 
-    // 4. Generate the sidebar navigation dynamically
-    function generateSidebar() {
-        const postsByDate = {};
-        journalPosts.forEach(post => {
-            if (!postsByDate[post.year]) postsByDate[post.year] = {};
-            if (!postsByDate[post.year][post.month]) postsByDate[post.year][post.month] = [];
-            postsByDate[post.year][post.month].push(post);
+    // 5. Render Gallery
+    function renderGallery() {
+        const filteredItems = getFilteredItems();
+        
+        if (filteredItems.length === 0) {
+            galleryGrid.innerHTML = `
+                <div class="gallery-empty">
+                    <h3>No items found</h3>
+                    <p>Try adjusting your filters to see more content.</p>
+                </div>
+            `;
+            return;
+        }
+
+        galleryGrid.innerHTML = filteredItems.map(item => `
+            <div class="gallery-item" data-id="${item.id}" tabindex="0">
+                <img src="${item.image}" alt="${item.title}" class="gallery-item-image">
+                <div class="gallery-item-content">
+                    <h3 class="gallery-item-title">${item.title}</h3>
+                    <p class="gallery-item-date">${item.date}</p>
+                    <p class="gallery-item-excerpt">${item.excerpt}</p>
+                    <div class="gallery-item-meta">
+                        <span class="gallery-item-category">${item.category}</span>
+                        <span class="gallery-item-year">${item.year}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // 6. Get Filtered Items
+    function getFilteredItems() {
+        return galleryItems.filter(item => {
+            const matchesFilter = currentFilter === 'all' || item.category === currentFilter;
+            const matchesYear = currentYear === 'all' || item.year === currentYear;
+            return matchesFilter && matchesYear;
+        });
+    }
+
+    // 7. Setup Event Listeners
+    function setupEventListeners() {
+        // Filter buttons
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                setActiveFilter(filter);
+                currentFilter = filter;
+                renderGallery();
+            });
         });
 
-        let sidebarHTML = '';
-        const currentYear = '2025';
+        // Year select
+        yearSelect.addEventListener('change', (e) => {
+            currentYear = e.target.value;
+            renderGallery();
+        });
 
-        if (postsByDate[currentYear]) {
-            sidebarHTML += `<div class="year">${currentYear}</div>`;
-            sidebarHTML += `<nav class="month-nav"><ul>`;
-            
-            // Add "View All Posts" option
-            sidebarHTML += `
-                <li>
-                    <a href="#" class="view-all-link" data-year="${currentYear}" data-month="all">
-                        VIEW ALL POSTS
-                    </a>
-                </li>
-            `;
+        // Gallery item clicks
+        galleryGrid.addEventListener('click', (e) => {
+            const galleryItem = e.target.closest('.gallery-item');
+            if (galleryItem) {
+                const itemId = galleryItem.dataset.id;
+                openLightbox(itemId);
+            }
+        });
 
-            allMonths.forEach(month => {
-                const postsExistForMonth = postsByDate[currentYear][month] && postsByDate[currentYear][month].length > 0;
-                const linkClass = postsExistForMonth ? '' : 'disabled';
-                const postCount = postsExistForMonth ? postsByDate[currentYear][month].length : 0;
+        // Gallery item keyboard navigation
+        galleryGrid.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const galleryItem = e.target.closest('.gallery-item');
+                if (galleryItem) {
+                    const itemId = galleryItem.dataset.id;
+                    openLightbox(itemId);
+                }
+            }
+        });
 
-                sidebarHTML += `
-                    <li>
-                        <a href="#" class="${linkClass}" data-year="${currentYear}" data-month="${month}">
-                            ${month}${postCount > 0 ? ` <span class="post-count">(${postCount})</span>` : ''}
-                        </a>
-                    </li>
-                `;
-            });
-            sidebarHTML += `</ul></nav>`;
-        }
-        
-        sidebarToc.innerHTML = sidebarHTML;
+        // Close lightbox
+        closeLightbox.addEventListener('click', closeLightboxModal);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightboxModal();
+            }
+        });
+
+        // Escape key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                closeLightboxModal();
+            }
+        });
     }
 
-    // 5. Handle all clicks on the sidebar using event delegation
-    sidebarToc.addEventListener('click', (e) => {
-        const clickedLink = e.target.closest('a');
-        if (clickedLink && !clickedLink.classList.contains('disabled')) {
-            e.preventDefault();
-            
-            const year = clickedLink.dataset.year;
-            const month = clickedLink.dataset.month;
-            
-            renderPostsForMonth(year, month);
-        }
-    });
-
-    // 6. Initial Page Load Logic
-    generateSidebar();
-    
-    // Default to the first post's month when the page loads
-    if (journalPosts.length > 0) {
-        renderPostsForMonth(journalPosts[0].year, journalPosts[0].month);
+    // 8. Set Active Filter
+    function setActiveFilter(filter) {
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.filter === filter) {
+                btn.classList.add('active');
+            }
+        });
     }
+
+    // 9. Open Lightbox
+    function openLightbox(itemId) {
+        const item = galleryItems.find(item => item.id === itemId);
+        if (!item) return;
+
+        lightboxImage.src = item.image;
+        lightboxImage.alt = item.title;
+        lightboxTitle.textContent = item.title;
+        lightboxDate.textContent = item.date;
+        lightboxContent.innerHTML = item.content;
+
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    // 10. Close Lightbox
+    function closeLightboxModal() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // 11. Initialize everything
+    initGallery();
 });
