@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="content">
                         ${entryData.content}
                     </div>
-                    <a href="javascript:history.back()" class="back-btn">← Back to Journal</a>
+                    <a href="index.html" target="_self" class="back-btn">← Back to Journal</a>
                 </div>
             </body>
             </html>
