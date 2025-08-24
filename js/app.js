@@ -209,6 +209,72 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <p>February reminds me to be kind to myself, to practice self-love, to remember that I am worthy of love and respect. It's a month that teaches us that the most important relationship we have is the one with ourselves.</p>
             `
+        },
+        10: {
+            title: "Rosario's Garden",
+            date: "January 27, 2025",
+            month: "january",
+            year: "2025",
+            type: "story",
+            author: "by Kellsby Merryway",
+            image: "img/entry-01.jpg",
+            content: `
+                <p>In the heart of the ancient city of Virellis, where cobblestone alleys twisted like secrets and the scent of jasmine hung like whispers in the air, there lived a man named Rosario Delmar—a bachelor of otherworldly charm and disarming grace. Dressed always in immaculate pastel suits, with a rose tucked into his lapel, Rosario was more than just a gardener—he was a legend.</p>
+                
+                <p>No one knew where he came from, only that he had appeared one spring with a mysterious smile and a cart full of seeds no botanist could name. Within weeks, his private greenhouse, known simply as Rosario's Garden, bloomed with colors and scents so intoxicating, they drew the curious like moths to a flame.</p>
+                
+                <p>The locals swore his flowers whispered at dusk. Women, men, and wanderers of all kinds would enter the gates of his garden and return changed—delirious, euphoric, sometimes never at all.</p>
+                
+                <p>Inside the garden were five flower maidens, each rooted in terracotta pots, their bodies curvaceous and green like tender shoots, their faces hidden behind hypnotic, vibrant blossoms. Their petals were unlike anything natural—golden, blue, orange, violet, crimson. They didn't speak, not in words, but through a seductive aura that wrapped around the heart like a vine.</p>
+                
+                <p>Rosario tended to them with devotion. He spoke to them. Watered them. Danced with them in the moonlight.</p>
+                
+                <p>Each maiden emitted an energy—a temptation—crafted from the sins of those who gazed upon them:</p>
+                
+                <p>Amara, with a golden bloom, exuded vanity.</p>
+                
+                <p>Saphyra, with blue petals, offered a dreamlike escape from reality.</p>
+                
+                <p>Cindra, orange and fire-bright, stirred unquenchable passion.</p>
+                
+                <p>Virelle, violet as twilight, offered submission and surrender.</p>
+                
+                <p>But the red rose maiden—Rosalith—was different.</p>
+                
+                <p>She was not rooted.</p>
+                
+                <p>She walked.</p>
+                
+                <p>Rosalith was Rosario's masterpiece.</p>
+                
+                <p>He had created her not from seeds, but from a stolen fragment of his own heart. She was temptation personified. The perfect lure.</p>
+                
+                <p>You see, Rosario was no mere gardener. He was a tender of souls—a being tasked with guarding the threshold between fantasy and desire, but corrupted by his own creations. Every visitor to his garden was unknowingly tested. The more they indulged in the siren-scented illusions, the more they rooted themselves in fantasy… until they were consumed, vanishing into the soil of the garden itself.</p>
+                
+                <p>Their memories fed the flowers. Their longing kept the blooms vibrant. And Rosalith—his rose queen—watered the illusions with the tears of those who almost escaped.</p>
+                
+                <p>One day, however, a visitor arrived who didn't fall for the charm. A blind painter named Elian, guided only by scent and sound, felt the garden's pull but resisted its embrace. He sensed the deceit beneath the floral beauty and recognized the longing in Rosalith's presence—not of seduction, but of entrapment.</p>
+                
+                <p>Elian whispered to her, not as a subject to a goddess, but as a soul to another soul.</p>
+                
+                <p>"You were meant to bloom free," he said. "Not to lure the lost."</p>
+                
+                <p>Rosalith hesitated. Something within her stirred—memories of warmth, rebellion, and something more than desire: choice.</p>
+                
+                <p>That night, for the first time, she wept crimson petals.</p>
+                
+                <p>Rosario, threatened by the unraveling of his enchantment, tried to stop her—but it was too late. With Elian's help, Rosalith uprooted herself from the lies that held her. The garden trembled. The flower maidens wailed.</p>
+                
+                <p>And Rosario?</p>
+                
+                <p>He was swallowed by his own vines, entangled in the very lust he cultivated.</p>
+                
+                <p>Rosalith and Elian disappeared into the night, leaving the garden to wilt and crumble. All that remains of Rosario's Garden is a rusted gate with petals at its base—petals that whisper only if you listen close:</p>
+                
+                <p><em>"Beware what blooms from longing, and what roots from lies."</em></p>
+                
+                <p><strong>The End.</strong></p>
+            `
         }
     };
 
