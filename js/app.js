@@ -212,8 +212,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         10: {
             title: "Rosario's Garden",
-            date: "January 27, 2025",
-            month: "january",
+            date: "August 23, 2025",
+            month: "august",
             year: "2025",
             type: "story",
             author: "by Kellsby Merryway",
