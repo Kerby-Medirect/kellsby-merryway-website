@@ -273,6 +273,76 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <p><strong>The End.</strong></p>
             `
+        },
+        11: {
+            title: "Glowbringer",
+            date: "August 27, 2025",
+            month: "august",
+            year: "2025",
+            type: "story",
+            author: "by Kellsby Merryway",
+            image: "img/entry-02.jpg",
+            content: `
+                <p>The city of Slumwood was never a place to cry. It just sighed—a deep, long, and tired exhale of a place that had seen too much and fought too long. On this particular night, the sigh was a deep one, a whisper of a city on the brink of giving up.</p>
+                
+                <p>Fifteen-year-old Kayce Bright zipped his worn hoodie up against the wind, which carried the scent of wet ash and desperation. He navigated the familiar maze of broken fences and flickering streetlights, his sneakers silent against the cracked pavement. The sunset, a faint smear of orange and purple, was quickly consumed by the gray, heavy smoke that never truly cleared. Another fire, another loss no one mourned out loud.</p>
+                
+                <p>He kept his headphones in, not for the music, but for the silence they promised—a silence that made the city's sadness a little less loud. Without them, it felt like the very air had given up.</p>
+                
+                <p>Kayce was a wiry kid, all gangly limbs and a sketchbook that always poked from his backpack. He was the kind who smiled easily, but only with purpose, a little light in him that he guarded like a precious secret. It was just enough to share, never enough to waste.</p>
+                
+                <p>He walked past the corner where Mrs. Riggins' fruit stand used to be before it was looted, past the mural of King Malik—Slumwood's only known activist—now defaced with gang tags. He hated it all, the way his home looked like a place people had forgotten. Still, he walked with a quiet defiance, each step a silent protest against the decay around him.</p>
+                
+                <p>When he turned the final block toward his building, the world went black.</p>
+                
+                <p>Not a slow fade, but a sudden, gut-wrenching total blackout.</p>
+                
+                <p>The streetlights died first, their last flickering breaths plunging the block into darkness. Storefronts went dark, and the little rectangles of light in apartment windows disappeared one by one. The silence was heavier than the darkness, broken only by the distant wail of sirens and the angry pop of gunshots a few blocks over. Kayce's chest tightened.</p>
+                
+                <p><strong>Aaliyah.</strong></p>
+                
+                <p>His little sister had gone to her friend Mia's, just two buildings away, two hours ago. Normally, she'd be back by now. But now? In the middle of a blackout? In Slumwood?</p>
+                
+                <p>Kayce didn't think. He simply ran, the single-minded panic of an older brother overriding everything else.</p>
+                
+                <p>The wind picked up, carrying the burnt plastic smell of desperation. He sprinted past shuttered storefronts, his eyes straining in the dark, and then he saw them. Three shadows, tall and hooded, moving at the end of the block. They were surrounding someone small, someone pressed against the cold brick of an alley wall.</p>
+                
+                <p><strong>Aaliyah.</strong></p>
+                
+                <p>She was clutched in on herself, her backpack held like a shield. The only light was the faint, dying glow of her phone in her hand. One of the figures stepped closer.</p>
+                
+                <p>"Yo!" Kayce yelled, his voice cracking with adrenaline. "Back off!"</p>
+                
+                <p>The figures turned slowly, like predators interrupted at a meal. One of them laughed. Another cracked his knuckles, the sound sharp and brutal in the dark. Kayce's heart hammered a frantic rhythm against his ribs. He couldn't fight three grown men. But he stepped forward anyway, his hands balled into fists, his small body a thin shield for his sister.</p>
+                
+                <p>Then, Aaliyah did something strange. She started to hum. A soft, trembling melody that rose above the sound of the wind.</p>
+                
+                <p>"Ain't no mountain high enough…" she sang, her voice a small, wavering whisper.</p>
+                
+                <p>Kayce froze. That was their song. The one their Grandma used to play during the worst of storms, telling them to dance through the dark, to let the rhythm carry them through.</p>
+                
+                <p>And suddenly, he felt it.</p>
+                
+                <p>A pulse. A thrum of warmth in his chest, a lightness that rose from deep inside him—from all the memories, the laughter, the sketchbook pages, the fierce love he had for this broken city and the little sister who still saw the good in it.</p>
+                
+                <p>Then he lit up.</p>
+                
+                <p><strong>Literally.</strong></p>
+                
+                <p>A golden light burst from his skin, like sunbeams trapped in a boy's body. The light traced the veins on his arms, making them glow. His hair seemed to float, and his eyes shone like stars, illuminating the alley and chasing the darkness back into the corners.</p>
+                
+                <p>The attackers stumbled back, blinded and confused. Kayce raised his hand—not to strike, but to protect. A dome of light flared out, pushing the men away and wrapping around Aaliyah like a hug made of pure joy.</p>
+                
+                <p>For the first time in his life, Kayce wasn't afraid. He was glowing.</p>
+                
+                <p>The light faded slowly, leaving the alley in a state of confused twilight. The men were gone. Aaliyah ran to him, her eyes wide with shock and wonder.</p>
+                
+                <p>"Kayce… what was that?" she whispered.</p>
+                
+                <p>He looked at his hands, still warm, a faint shimmer of light clinging to his skin. "I… I don't know," he said.</p>
+                
+                <p>But deep down, he did. In a city swallowed by sorrow, he had risen. He was the light in the dark. And this was only the beginning.</p>
+            `
         }
     };
 
