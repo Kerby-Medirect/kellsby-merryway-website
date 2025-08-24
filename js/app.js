@@ -73,105 +73,103 @@ document.addEventListener('DOMContentLoaded', function() {
             `
         },
         3: {
-            title: "Whispers of Color",
-            date: "December 5, 2024",
+            title: "Winter's Whisper",
+            date: "December 15, 2025",
             month: "december",
-            year: "2024",
+            year: "2025",
             type: "artwork",
             author: "by Kellsby Merryway",
             image: "img/entry-03.jpg",
             content: `
-                <p>Colors speak in whispers, telling stories that words cannot capture. Each hue carries emotion, each shade holds memory. In the dance of light and pigment, we find the language of the soul.</p>
+                <p>Winter speaks in hushed tones, painting the world in crystalline beauty. Each snowflake carries a story, each frost pattern tells a tale of nature's artistry.</p>
                 
-                <p>I've always been fascinated by how colors affect our emotions and perceptions. There's something almost magical about the way a particular shade can transport us to a specific moment in time, or evoke feelings we didn't even know we had.</p>
+                <p>There's something magical about winter that goes beyond the cold and the snow. It's a season that forces us to slow down, to appreciate the quiet moments, to find beauty in the stark contrast between light and shadow.</p>
                 
-                <p>Take blue, for instance. Not just any blue, but the deep, rich blue of twilight—the color that appears just before the world goes dark. It's a color that speaks of endings and beginnings, of the quiet moments between day and night when anything seems possible. It's the color of hope and melancholy, of dreams and memories.</p>
+                <p>Winter teaches us about patience and resilience. The trees stand bare and vulnerable, yet they endure. The ground lies frozen and seemingly lifeless, yet beneath the surface, life waits patiently for spring's return.</p>
                 
-                <p>Or red—not the harsh, aggressive red of warning signs, but the warm, inviting red of autumn leaves or ripe strawberries. It's a color that speaks of passion and warmth, of life and energy. It's the color of love and courage, of fire and heart.</p>
+                <p>I think winter is nature's way of teaching us about rest and renewal. Just as the earth needs this time of dormancy to prepare for the next cycle of growth, we too need moments of quiet reflection to prepare for what comes next.</p>
                 
-                <p>Green is the color of growth and renewal, of nature's endless cycle of death and rebirth. It's the color of patience and persistence, of standing firm in the face of change. It's the color of wisdom and balance, of harmony and peace.</p>
-                
-                <p>Yellow is the color of joy and optimism, of sunlight streaming through windows and daffodils in spring. It's the color of creativity and inspiration, of new ideas and fresh perspectives. It's the color of happiness and hope.</p>
-                
-                <p>But colors don't exist in isolation. They interact with each other, creating harmonies and contrasts that tell even more complex stories. A blue and green together might speak of ocean depths and forest shadows, while red and yellow together might speak of warmth and energy, of summer days and golden sunsets.</p>
-                
-                <p>I think that's why I love working with color so much. It's a way of communicating without words, of expressing emotions and ideas that are too complex or too subtle for language alone. It's a way of creating beauty and meaning in a world that sometimes feels chaotic and uncertain.</p>
-                
-                <p>And maybe that's the greatest gift that colors give us—not just beauty, but understanding. A way to see the world more clearly, to feel more deeply, to connect with ourselves and others in ways that words alone cannot achieve.</p>
-                
-                <p>So I listen to the whispers of color, and I try to understand what they're telling me. About the world, about myself, about the endless possibilities that exist when we open our eyes and our hearts to the beauty that surrounds us.</p>
+                <p>And maybe that's the greatest gift of winter—not just the beauty of snow-covered landscapes, but the reminder that sometimes the most profound growth happens in the quiet, hidden places of our hearts.</p>
             `
         },
         4: {
-            title: "Autumn's Embrace",
-            date: "November 20, 2024",
+            title: "November's Grace",
+            date: "November 22, 2025",
             month: "november",
-            year: "2024",
+            year: "2025",
             type: "poem",
             author: "by Kellsby Merryway",
-            image: "img/entry-02.jpg",
+            image: "img/entry-01.jpg",
             content: `
-                <p>The trees shed their summer clothes, revealing the raw beauty beneath. Autumn teaches us that letting go can be as beautiful as holding on.</p>
+                <p>November teaches us the art of letting go, the beauty of surrender, and the wisdom found in autumn's final breath.</p>
                 
-                <p>There's something profoundly moving about watching the world transform itself, season by season. In autumn, nature shows us the art of graceful surrender. The leaves don't cling desperately to their branches; they let go with a final burst of color, painting the ground in brilliant hues before returning to the earth.</p>
+                <p>There's something profoundly moving about November—the way it stands as autumn's final act, a bridge between the vibrant colors of October and the stark beauty of December. It's a month that asks us to release what no longer serves us, to make space for what's to come.</p>
                 
-                <p>I think autumn is nature's way of teaching us about change. It's not always comfortable or easy, but it's necessary for growth. Just as the trees must lose their leaves to prepare for winter's rest, we too must sometimes let go of what we're holding onto to make room for new possibilities.</p>
+                <p>November teaches us about the grace of endings. The trees, now mostly bare, stand with dignity in their vulnerability. The ground, covered in fallen leaves, becomes a canvas of earth tones and memories. It's a reminder that letting go is not a sign of weakness, but of strength.</p>
                 
-                <p>The beauty of autumn lies not just in its colors, but in its wisdom. It reminds us that endings can be beautiful, that loss can be transformative, that change is not the enemy of beauty but often its source.</p>
+                <p>I think November is nature's way of teaching us about surrender—not giving up, but giving over. It's about trusting the process, believing that what comes next will be exactly what we need, even if we can't see it yet.</p>
+                
+                <p>And maybe that's the greatest gift of November—the reminder that sometimes the most beautiful moments come when we stop holding on and start letting go.</p>
             `
         },
         5: {
-            title: "October Dreams",
-            date: "October 15, 2024",
+            title: "October's Enchantment",
+            date: "October 18, 2025",
             month: "october",
             year: "2025",
             type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
-                <p>October carries a special magic, a time when the world feels suspended between summer's warmth and winter's promise.</p>
+                <p>October weaves its magic between summer's warmth and winter's promise, creating moments of pure enchantment in the golden light.</p>
                 
-                <p>There's something about October that feels like a dream—the way the light slants through the trees, the crispness in the air, the way everything seems to glow with an inner light. It's as if the world is holding its breath, waiting for something magical to happen.</p>
+                <p>There's something about October that feels like a spell—the way the light slants through the trees, painting everything in warm, golden hues. It's as if the world is caught in a moment of perfect balance, suspended between the fading intensity of summer and the approaching mystery of winter.</p>
                 
-                <p>Perhaps it's the way October bridges two worlds—the fading warmth of summer and the approaching mystery of winter. It's a month of transition, of change, of possibility. In October, anything seems possible, and the world feels full of promise.</p>
+                <p>October is a month of transformation, a time when the world seems to hold its breath, waiting for the next act to begin. The leaves change color with such intensity, it's as if they're trying to make up for all the beauty they'll lose in the coming months. The air carries a crispness that speaks of change, of endings and new beginnings.</p>
                 
-                <p>I love how October makes me feel—alive and hopeful, ready for whatever comes next. It's a month that reminds me that change is beautiful, that endings are beginnings, and that magic is always possible if we're open to seeing it.</p>
+                <p>I think October is nature's way of teaching us about the beauty of transition. It's a reminder that change doesn't have to be sudden or jarring—it can be gradual, beautiful, even magical. It's a month that asks us to slow down, to appreciate the moment, to find beauty in the in-between spaces of life.</p>
+                
+                <p>And maybe that's the greatest enchantment of October—the way it reminds us that sometimes the most beautiful moments happen not at the beginning or the end, but in the delicate space between.</p>
             `
         },
         6: {
-            title: "September's Song",
-            date: "September 25, 2024",
+            title: "September's Transition",
+            date: "September 28, 2025",
             month: "september",
-            year: "2024",
+            year: "2025",
             type: "poem",
             author: "by Kellsby Merryway",
-            image: "entry-01.jpg",
+            image: "img/entry-01.jpg",
             content: `
-                <p>September sings a gentle lullaby, easing us from summer's intensity into autumn's gentle embrace.</p>
+                <p>September bridges two worlds with gentle grace, easing us from summer's intensity into autumn's gentle embrace.</p>
                 
-                <p>There's something about September that feels like a transition, a bridge between two worlds. The heat of summer begins to fade, replaced by cooler breezes that carry the promise of change. It's as if the world is taking a deep breath, preparing for the transformation that autumn will bring.</p>
+                <p>There's something about September that feels like a bridge—a graceful span between the intensity of summer and the gentle wisdom of autumn. The heat begins to fade, replaced by cooler breezes that carry the promise of change. It's as if the world is taking a deep breath, preparing for the transformation that autumn will bring.</p>
                 
-                <p>I love how September feels—still warm enough to enjoy the outdoors, but with that hint of crispness that speaks of things to come. It's a month that reminds me that change doesn't have to be sudden or jarring. Sometimes it comes gently, like a song that gradually shifts from one key to another.</p>
+                <p>September teaches us about the beauty of transition. It's a month that doesn't rush from one season to the next, but rather eases us gently, allowing us to adjust to the changing rhythms of nature. The days are still warm enough to enjoy, but there's that hint of crispness in the air that speaks of things to come.</p>
                 
-                <p>September teaches us patience. It shows us that good things take time, that the best transitions are the ones that happen gradually, allowing us to adjust and appreciate each moment as it comes.</p>
+                <p>I think September is nature's way of teaching us about grace under pressure. It's a month that shows us how to navigate change with dignity, how to let go of what was while embracing what's to come. It's a reminder that transitions don't have to be jarring—they can be beautiful, even poetic.</p>
+                
+                <p>And maybe that's the greatest gift of September—the way it teaches us to find beauty in the in-between spaces, to appreciate the journey as much as the destination.</p>
             `
         },
         7: {
-            title: "August Heat",
-            date: "August 10, 2024",
+            title: "August's Fire",
+            date: "August 15, 2025",
             month: "august",
-            year: "2024",
+            year: "2025",
             type: "story",
             author: "by Kellsby Merryway",
             image: "img/entry-02.jpg",
             content: `
-                <p>August holds the year's warmth like a precious gem, reminding us to savor every moment of summer's final days.</p>
+                <p>August burns with summer's final intensity, a blaze of heat and passion that reminds us to savor every moment of warmth.</p>
                 
-                <p>August is summer at its most intense, its most vibrant. The heat seems to slow everything down, creating a sense of timelessness that's both frustrating and beautiful. In August, the world feels alive with energy, with possibility, with the raw power of the sun.</p>
+                <p>August is summer at its most intense, its most passionate. The heat seems to slow everything down, creating a sense of timelessness that's both challenging and beautiful. In August, the world feels alive with energy, with possibility, with the raw power of the sun.</p>
                 
                 <p>I think August is nature's way of teaching us about intensity—about how to embrace the heat, to find beauty in discomfort, to appreciate the fullness of experience. It's a month that doesn't apologize for being what it is, and there's something admirable about that kind of authenticity.</p>
                 
                 <p>August reminds me to slow down, to appreciate the moment, to find joy in the simple things—a cold drink, a shady spot, the feeling of the sun on my skin. It's a month that teaches us to be present, to savor what we have while we have it.</p>
+                
+                <p>And maybe that's the greatest gift of August—the way it forces us to be present, to find beauty in the intensity of the moment, to appreciate the fire that burns within us all.</p>
             `
         },
         8: {
